@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Reel</title>
+    <link rel="stylesheet" type="text/css" href="src/global/css/base.css">
+    <link rel="stylesheet" type="text/css" href="src/index/css/hero.css">
+    <link rel="stylesheet" type="text/css" href="src/index/css/random.css">
+</head>
+<body>
+
+    <div id="hero">
+        <img id="logo" src="images/logo.png"></img>
+
+        <h2 id="heroTitle"><span class="whiteText">FIND YOUR</span><br/>NEXT MOVIE</h2>
+        <p id="heroSubtitle">Search by title, year, or explore suggestions to discover your next facorite movie.</p>
+
+        <form id="search">
+            <img src="images/search.png"></img>
+            <input type="search" placeholder="Search movies by title or keyword"></input>
+            <button id="submitSearch">search</button>
+        </form>
+
+    </div>
+    <form id="filters">
+        <fieldset id="genreFilters" name="genreFilters">
+            <legend>Genre</legend>
+
+            <label htmlFor="actionGenre">
+                <input type="checkbox" id="actionGenre"></input>
+                <p>Acion</p>
+            </label>
+
+            <label htmlFor="comedyGenre">
+                <input type="checkbox" id="comedyGenre"></input>
+                <p>Comedy</p>
+            </label>
+            
+            <label htmlFor="horrorGenre">
+                <input type="checkbox" id="horrorGenre"></input>
+                <p>Horror</p>
+            </label>
+            
+            <label htmlFor="romanceGenre">
+                <input type="checkbox" id="romanceGenre"></input>
+                <p>Romance</p>
+            </label>
+            
+            <label htmlFor="dramaGenre">
+                <input type="checkbox" id="dramaGenre"></input>
+                <p>Drama</p>
+            </label>
+            
+            <label htmlFor="scifiGenre">
+                <input type="checkbox" id="scifiGenre"></input>
+                <p>Sci-Fi</p>
+            </label>
+        </fieldset>
+
+        <fieldset id="yearFilter" name="yearFilter">
+            <legend>Year</legend>
+            
+            <label htmlFor="fromYear">From</label>
+            <input type="number" id="fromYear"></input>
+
+            <label htmlFor="toYear">To</label>
+            <input type="number" id="toYear"></input>
+        </fieldset>    
+    </form>
+    
+    <h4>TRENDING NOW</h4>
+    
+    <div id='random'>
+        <img src="images/random.png" />
+        <p>Can't decide what to watch?<br /><span>Let fate choose</span></p>
+        <button>Surprise Me</button>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+#random {
+    display: flex;
+}
+
+#random img {
+    height: 3rem;
+}
+
+#random p {
+    color: white;
+}
+
+#random p span {
+    color: grey;
+}
