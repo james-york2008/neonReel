@@ -1,5 +1,6 @@
 #random {
     display: flex;
+    align-items: center;
 }
 
 #random img {
@@ -12,4 +13,16 @@
 
 #random p span {
     color: grey;
+}
+
+#random button {
+    color: white;
+        background: linear-gradient(
+        -45deg, 
+        rgb(255, 94, 163), 
+        rgb(0, 12, 255));
+    margin-left: 1rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    border: none;
 }

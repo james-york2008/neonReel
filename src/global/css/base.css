@@ -11,3 +11,19 @@ body {
     font-family: serif, sans-serif, times;
     line-height: 1.1;
 }
+
+.sectionTitle {    
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+#backgroundImageWrapper {
+    background: url(../../../images/heroImage.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#hero, #filters {
+    background-color: transparent !important;
+}

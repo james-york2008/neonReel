@@ -1,0 +1,47 @@
+#genreFiltersWrapper {
+    overflow: scroll;
+    padding-bottom: 1rem;
+}
+
+#genreFilters {
+    display: flex;
+    margin: 0 1rem;
+    gap: 1rem;
+}
+
+#genreFilters .sectionTitle {
+    padding: 1rem 0;
+}
+
+#genreFilters, #yearFilter {
+    border: none;
+}
+
+#genreFilters label {
+    border: 2px solid rgba(55, 55, 100, 0.5);
+    display: flex;
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    width: 6rem;
+    justify-content: center;
+}
+
+.genre {
+    padding: 0 0.2rem;
+    color: white;
+}
+
+label input {
+    appearance: none;
+}
+
+#yearFilter {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+#fromYear label, #toYear label {
+    display: flex;
+    justify-content: center;
+}

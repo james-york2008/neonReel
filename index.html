@@ -6,77 +6,89 @@
     <title>Neon Reel</title>
     <link rel="stylesheet" type="text/css" href="src/global/css/base.css">
     <link rel="stylesheet" type="text/css" href="src/index/css/hero.css">
+    <link rel="stylesheet" type="text/css" href="src/index/css/filters.css">
+    <link rel="stylesheet" type="text/css" href="src/index/css/movies.css">
     <link rel="stylesheet" type="text/css" href="src/index/css/random.css">
 </head>
 <body>
 
-    <div id="hero">
-        <img id="logo" src="images/logo.png"></img>
+    <div id="backgroundImageWrapper">
+        <div id="hero">
+            <a href="index.html" id="logoWrapper"><img id="logo" src="images/logo.png" alt="Link to home page"></img></a>
 
-        <h2 id="heroTitle"><span class="whiteText">FIND YOUR</span><br/>NEXT MOVIE</h2>
-        <p id="heroSubtitle">Search by title, year, or explore suggestions to discover your next facorite movie.</p>
+            <h2 id="heroTitle"><span class="whiteText">FIND YOUR</span><br/>NEXT MOVIE</h2>
+            <p id="heroSubtitle">Search by title, year, or explore suggestions to discover your next facorite movie.</p>
 
-        <form id="search">
-            <img src="images/search.png"></img>
-            <input type="search" placeholder="Search movies by title or keyword"></input>
-            <button id="submitSearch">search</button>
+            <form id="search">
+                <div id="searchWrapper">
+                    <img src="images/search.png"></img>
+                    <input type="search" placeholder="Search movies by title or keyword" id="searchBar"></input>
+                </div>
+                <button id="submitSearch">Search</button>
+            </form>
+
+        </div>
+        <form id="filters">
+            <div id="genreFiltersWrapper">
+                <fieldset id="genreFilters" name="genreFilters">
+                    <legend class="sectionTitle">QUICK PICKS</legend>
+
+                    <label for="actionGenre">
+                        <input type="checkbox" id="actionGenre"></input>
+                        <p class="genre">Acion</p>
+                    </label>
+
+                    <label for="comedyGenre">
+                        <input type="checkbox" id="comedyGenre"></input>
+                        <p class="genre">Comedy</p>
+                    </label>
+                    
+                    <label for="horrorGenre">
+                        <input type="checkbox" id="horrorGenre"></input>
+                        <p class="genre">Horror</p>
+                    </label>
+                    
+                    <label for="romanceGenre">
+                        <input type="checkbox" id="romanceGenre"></input>
+                        <p class="genre">Romance</p>
+                    </label>
+                    
+                    <label for="dramaGenre">
+                        <input type="checkbox" id="dramaGenre"></input>
+                        <p class="genre">Drama</p>
+                    </label>
+                    
+                    <label for="scifiGenre">
+                        <input type="checkbox" id="scifiGenre"></input>
+                        <p class="genre">Sci-Fi</p>
+                    </label>
+                </fieldset>
+            </div>
+
+            <fieldset id="yearFilter" name="yearFilter">
+                <legend class="sectionTitle">SORT BY YEAR</legend>
+                
+                <div id="fromYear">
+                    <label for="fromYear">From</label>
+                    <input type="number" id="fromYear"></input>
+                </div>
+
+                <div id="toYear">
+                    <label for="toYear">To</label>
+                    <input type="number" id="toYear"></input>
+                </div>
+            </fieldset>    
         </form>
-
     </div>
-    <form id="filters">
-        <fieldset id="genreFilters" name="genreFilters">
-            <legend>Genre</legend>
-
-            <label htmlFor="actionGenre">
-                <input type="checkbox" id="actionGenre"></input>
-                <p>Acion</p>
-            </label>
-
-            <label htmlFor="comedyGenre">
-                <input type="checkbox" id="comedyGenre"></input>
-                <p>Comedy</p>
-            </label>
-            
-            <label htmlFor="horrorGenre">
-                <input type="checkbox" id="horrorGenre"></input>
-                <p>Horror</p>
-            </label>
-            
-            <label htmlFor="romanceGenre">
-                <input type="checkbox" id="romanceGenre"></input>
-                <p>Romance</p>
-            </label>
-            
-            <label htmlFor="dramaGenre">
-                <input type="checkbox" id="dramaGenre"></input>
-                <p>Drama</p>
-            </label>
-            
-            <label htmlFor="scifiGenre">
-                <input type="checkbox" id="scifiGenre"></input>
-                <p>Sci-Fi</p>
-            </label>
-        </fieldset>
-
-        <fieldset id="yearFilter" name="yearFilter">
-            <legend>Year</legend>
-            
-            <label htmlFor="fromYear">From</label>
-            <input type="number" id="fromYear"></input>
-
-            <label htmlFor="toYear">To</label>
-            <input type="number" id="toYear"></input>
-        </fieldset>    
-    </form>
     
-    <h4>TRENDING NOW</h4>
+    <h4 class="sectionTitle">TRENDING NOW</h4>
     
     <div id='random'>
-        <img src="images/random.png" />
-        <p>Can't decide what to watch?<br /><span>Let fate choose</span></p>
+        <img src="images/random.png">
+        <p>Can't decide what to watch?<br><span>Let fate choose</span></p>
         <button>Surprise Me</button>
     </div>
-
     
+
 </body>
 </html>
