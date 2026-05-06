@@ -1,10 +1,4 @@
-#hero {
-    background: url(../../../images/heroImage.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-#logo {
+#logo, #logoWrapper {
     height: 7rem;
     background-color: transparent;
 }
@@ -16,7 +10,7 @@
         rgb(0, 12, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding: 0.3rem 1rem 0.3rem;
+    padding: 0.3rem 1rem;
     font-size: 1.5rem;
 }
 
@@ -26,10 +20,6 @@
     background-color: transparent;
 }
 
-#search img {
-    height: 1.5rem;
-}
-
 #heroSubtitle {
     max-width: 10rem;
     background-color: transparent;
@@ -37,4 +27,32 @@
     padding: 0 1rem 1rem;
     font-size: 0.9rem;
     line-height: 1.1rem;
+}
+
+#search {
+    margin: 1rem;
+    border: 2px solid rgba(55, 55, 100, 0.5);
+    padding: 0.3rem;
+    border-radius: 15px;
+}
+
+#searchBar {
+    width: 15rem;
+    box-shadow: none;
+    border: none;
+}
+
+#search img {
+    height: 2rem;
+}
+
+#submitSearch {
+    background: linear-gradient(
+        -45deg, 
+        rgb(255, 94, 163), 
+        rgb(0, 12, 255));
+    border: none;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
 }
