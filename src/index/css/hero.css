@@ -34,12 +34,19 @@
     border: 2px solid rgba(55, 55, 100, 0.5);
     padding: 0.3rem;
     border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#searchWrapper {
+    display: flex;
 }
 
 #searchBar {
     width: 15rem;
     box-shadow: none;
     border: none;
+    color: white;
 }
 
 #search img {
@@ -53,6 +60,44 @@
         rgb(0, 12, 255));
     border: none;
     color: white;
-    padding: 0.3rem 1rem;
+    padding: 0.1rem 1rem;
     border-radius: 10px;
+}
+
+@media (min-width: 700px) {
+    #heroTitle {
+        font-size: 2.3rem;
+    }
+
+    #heroSubtitle {
+        max-width: 17rem;
+        line-height: 1.5rem;
+    }
+
+    #logo {
+        height: 9rem;
+    }
+}
+
+@media (min-width: 800px) {
+    #search {
+        max-width: 70%;
+    }
+
+    #searchBar {
+        width: 25rem;
+        padding-left: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #heroTitle {
+        font-size: 3rem;
+    }
+
+    #heroSubtitle {
+        max-width: 20rem;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+    }
 }
