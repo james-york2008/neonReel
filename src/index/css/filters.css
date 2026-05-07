@@ -44,4 +44,16 @@ label input {
 #fromYear label, #toYear label {
     display: flex;
     justify-content: center;
+    font-size: 1.1rem;
+}
+
+#fromYear, #toYear {
+    color: white;
+    margin: 0.5rem;
+}
+
+@media (min-width: 700px) {
+    #genreFiltersWrapper {
+        overflow: hidden;
+    }
 }

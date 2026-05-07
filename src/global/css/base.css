@@ -24,6 +24,6 @@ body {
     background-size: 100%;
 }
 
-#hero, #filters {
-    background-color: transparent !important;
+#backgroundImageWrapper #hero, #genreFiltersWrapper {
+    background-color: transparent;
 }
