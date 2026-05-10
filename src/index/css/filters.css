@@ -24,6 +24,7 @@
     border-radius: 10px;
     width: 6rem;
     justify-content: center;
+    cursor: pointer;
 }
 
 .genre {
@@ -55,5 +56,29 @@ label input {
 @media (min-width: 700px) {
     #genreFiltersWrapper {
         overflow: hidden;
+    }
+
+    #fromYear label, #toYear label {
+        font-size: 1.3rem;
+    }
+
+    .genre {
+        font-size: 1.3rem;
+        padding: 0 0.5rem;
+    }
+
+    
+    #genreFilters .sectionTitle {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #fromYear label, #toYear label {
+        font-size: 1.5rem;
+    }
+
+    #fromYear input, #toYear input {
+        line-height: 1.5rem;
     }
 }

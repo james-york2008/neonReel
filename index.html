@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="src/index/css/filters.css">
     <link rel="stylesheet" type="text/css" href="src/index/css/movies.css">
     <link rel="stylesheet" type="text/css" href="src/index/css/random.css">
+    <link rel="stylesheet" type="text/css" href="src/index/css/footer.css">
 </head>
 <body>
 
@@ -21,7 +22,7 @@
 
             <form id="search">
                 <div id="searchWrapper">
-                    <img src="images/search.png"></img>
+                    <img src="images/search.png" alt="" id="submitSearchViaImg"></img>
                     <input type="search" placeholder="Search movies by title or keyword" id="searchBar"></input>
                 </div>
                 <button id="submitSearch">Search</button>
@@ -82,13 +83,14 @@
     </div>
     
     <h4 class="sectionTitle">TRENDING NOW</h4>
+
+    <div id="movies"></div>
     
-    <div id='random'>
+    <div id="random">
         <img src="images/random.png">
         <p>Can't decide what to watch?<br><span>Let fate choose</span></p>
         <button>Surprise Me</button>
     </div>
-    
 
 </body>
 </html>

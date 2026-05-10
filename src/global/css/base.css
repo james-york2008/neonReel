@@ -12,7 +12,7 @@ body {
     line-height: 1.1;
 }
 
-.sectionTitle {    
+.sectionTitle {  
     color: white;
     padding: 1rem;
     font-size: 1.1rem;
@@ -26,4 +26,17 @@ body {
 
 #backgroundImageWrapper #hero, #genreFiltersWrapper {
     background-color: transparent;
+}
+
+@media (min-width: 700px) {
+    .sectionTitle {
+        font-size: 1.3rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .sectionTitle {
+        font-size: 1.5rem
+    }
 }
