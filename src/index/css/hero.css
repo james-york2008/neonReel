@@ -51,6 +51,7 @@
 
 #search img {
     height: 2rem;
+    cursor: pointer;
 }
 
 #submitSearch {
@@ -60,11 +61,21 @@
         rgb(0, 12, 255));
     border: none;
     color: white;
-    padding: 0.1rem 1rem;
+    padding: 0 1rem;
     border-radius: 10px;
+    cursor: pointer;
+    margin: auto 0;
 }
 
 @media (min-width: 700px) {
+    #search {
+        max-width: 75%;
+    }
+
+    #submitSearch {
+        padding: 0.5rem 1.3rem;
+    }
+
     #heroTitle {
         font-size: 2.3rem;
     }
@@ -80,8 +91,12 @@
 }
 
 @media (min-width: 800px) {
-    #search {
-        max-width: 70%;
+    #search img {
+        height: 3rem;
+    }
+
+    #searchBar, #submitSearch {
+        font-size: 1rem;
     }
 
     #searchBar {
@@ -99,5 +114,17 @@
         max-width: 20rem;
         line-height: 1.5rem;
         font-size: 1.2rem;
+    }
+    
+    #search {
+        max-width: 60%;
+    }
+
+    #search img {
+        height: 4rem;
+    }
+
+    #searchBar, #submitSearch {
+        font-size: 1.3rem;
     }
 }
