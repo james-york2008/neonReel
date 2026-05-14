@@ -1,4 +1,4 @@
-import { fetchRecommendedMovies, handleSearch } from './fetchMovies.js'
+import { fetchRecommendedMovies, handleSearch, handleGenreFilter } from './fetchMovies.js'
     const movies = document.getElementById('movies')
 
 let renderMovies = function (movieArray) {
@@ -22,10 +22,9 @@ let renderMovies = function (movieArray) {
 
 document.addEventListener('DOMContentLoaded', async() => {
     let data = await fetchRecommendedMovies()
-    console.log(data)  
     
 
-    renderMovies(data.results)
+    renderMovies(data)
 })
 
 const submitSearch = document.getElementById('submitSearch')
@@ -41,7 +40,12 @@ submitSearch.addEventListener('click', async (event) => {
     } else {
         data = await fetchRecommendedMovies()       
     }
-  
-    renderMovies(data.results)
-    console.log(data)
+    
+    renderMovies(data)
+})
+
+const genreFilters = document.getElementById('genreFilters')
+genreFilters.addEventListener('change', async () => {
+    let data = await handleGenreFilter()
+    renderMovies(data)
 })
