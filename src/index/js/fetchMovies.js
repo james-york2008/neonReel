@@ -52,7 +52,32 @@ let handleGenreFilter = async () => {
     } else {
         return data.results
     }
-    
 }
 
-export { fetchRecommendedMovies, handleSearch, handleGenreFilter }
+let handleYearFilter = async () => {
+    let fromYear = document.getElementById('fromYear').value
+    let toYear = document.getElementById('toYear').value
+    if (fromYear) {fromYear = fromYear + '-01-01'}
+    if (toYear) {toYear = toYear + '-12-31'}
+
+    const res = await  fetch(`https://api.themoviedb.org/3/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&primary_release_date.gte=${fromYear}&primary_release_date.lte=${toYear}`)
+    if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`)
+    }
+    const data = await res.json()
+    return data.results
+}
+
+let handleRandom = async () => {
+    const randomPage = Math.floor(Math.random() * 500) + 1
+    const randomMovie = Math.floor(Math.random() * 20)
+
+    const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&page=${randomPage}`)
+    if (!res.ok) {
+        throw new Error(`http ${res.status}`)
+    }
+    const data = await res.json()
+    return data.results[randomMovie]
+}
+
+export { fetchRecommendedMovies, handleSearch, handleGenreFilter, handleYearFilter, handleRandom }
