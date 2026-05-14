@@ -69,12 +69,12 @@
             <fieldset id="yearFilter" name="yearFilter">
                 <legend class="sectionTitle">SORT BY YEAR</legend>
                 
-                <div id="fromYear">
+                <div id="fromYearDiv">
                     <label for="fromYear">From</label>
                     <input type="number" id="fromYear"></input>
                 </div>
 
-                <div id="toYear">
+                <div id="toYearDiv">
                     <label for="toYear">To</label>
                     <input type="number" id="toYear"></input>
                 </div>
@@ -82,14 +82,15 @@
         </form>
     </div>
     
-    <h4 class="sectionTitle">TRENDING NOW</h4>
 
-    <div id="movies"></div>
+    <div id="movies">
+        <h4 class="sectionTitle">TRENDING NOW</h4>
+    </div>
     
     <div id="random">
         <img src="images/random.png">
         <p>Can't decide what to watch?<br><span>Let fate choose</span></p>
-        <button>Surprise Me</button>
+        <button id="randomize">Surprise Me</button>
     </div>
 
     <footer>

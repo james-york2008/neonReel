@@ -1,5 +1,3 @@
-import { handleSearch } from './fetchMovies.js'
-
 document.addEventListener('DOMContentLoaded', () => {
     const submitSearchViaImg = document.getElementById('submitSearchViaImg')
     const submitSearch = document.getElementById('submitSearch')
