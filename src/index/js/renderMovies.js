@@ -1,8 +1,9 @@
 import { fetchRecommendedMovies, handleSearch, handleGenreFilter, handleYearFilter, handleRandom } from './fetchMovies.js'
 const movies = document.getElementById('movies')
 
-let renderMovies = (movieArray) => {
+let renderMovies = async (movieArray, func) => {
     movies.innerHTML = ''
+
     movieArray.forEach(movie => {
         let article = document.createElement('article')
         article.classList.add('movie')
@@ -17,7 +18,7 @@ let renderMovies = (movieArray) => {
         <p class="voteAverage">${movie.vote_average}</p>`
 
         movies.append(article)
-    })  
+    }) 
 }   
 
 document.addEventListener('DOMContentLoaded', async() => {
