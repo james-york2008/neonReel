@@ -12,7 +12,7 @@ let renderMovies = (movieArray) => {
         article.innerHTML = `
         <h6>${movie.title}</h6>
         <p class="movieYear">${year}</p>
-        <img src="../../../images/star.png" alt="" class="star">
+        <img src="images/star.png" alt="" class="star">
 
         <p class="voteAverage">${movie.vote_average}</p>`
 
@@ -68,7 +68,7 @@ random.addEventListener('click', async () => {
     article.innerHTML = `
     <h6>${movie.title}</h6>
     <p class="movieYear">${year}</p>
-    <img src="../../../images/star.png" alt="" class="star">
+    <img src="images/star.png" alt="" class="star">
 
     <p class="voteAverage">${movie.vote_average}</p>`
 
