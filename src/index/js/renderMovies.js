@@ -1,7 +1,7 @@
-import { fetchRecommendedMovies, handleSearch, handleGenreFilter, handleYearFilter, handleRandom } from './fetchMovies.js'
+import { fetchRecommendedMovies, handleRandom, checkFilters } from './fetchMovies.js'
 const movies = document.getElementById('movies')
 
-let renderMovies = async (movieArray, func) => {
+let renderMovies = async (movieArray) => {
     movies.innerHTML = ''
 
     movieArray.forEach(movie => {
@@ -36,7 +36,7 @@ submitSearch.addEventListener('click', async (event) => {
     let data
   
     if (value) {
-        data = await handleSearch(value)
+        data = await checkFilters()
     } else {
         data = await fetchRecommendedMovies()       
     }
@@ -46,13 +46,13 @@ submitSearch.addEventListener('click', async (event) => {
 
 const genreFilters = document.getElementById('genreFilters')
 genreFilters.addEventListener('change', async () => {
-    let data = await handleGenreFilter()
+    let data = await checkFilters()
     renderMovies(data)
 })
 
 const yearFilter = document.getElementById('yearFilter')
 yearFilter.addEventListener('input', async () => {
-    let data = await handleYearFilter()
+    let data = await checkFilters()
     renderMovies(data)
 })
 
