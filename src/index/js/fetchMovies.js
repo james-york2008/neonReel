@@ -71,8 +71,15 @@ let handleYearFilter = async () => {
 let handleRandom = async () => {
     const randomPage = Math.floor(Math.random() * 500) + 1
     const randomMovie = Math.floor(Math.random() * 20)
+    let res
 
-    const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&page=${randomPage}`)
+    const selectedGenres = getSelectedGenres().join(',')
+
+    if (selectedGenres) {
+        res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&with_genres=${selectedGenres}&sort_by=popularity.desc&page=${randomPage}`) 
+    } else {
+        res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&page=${randomPage}`)
+    }
     if (!res.ok) {
         throw new Error(`http ${res.status}`)
     }
