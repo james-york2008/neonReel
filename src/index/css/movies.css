@@ -37,3 +37,18 @@
     height: 1rem;
     display: inline-block;
 }
+
+
+@media (min-width: 700px) {
+    .movie {
+        height: 18rem;
+        width: 12rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .movie {
+        height: 24rem;
+        width: 16rem;
+    }
+}
