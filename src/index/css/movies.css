@@ -1,5 +1,5 @@
 #movies {
-    padding: 1rem 0;
+    padding: 3rem 0;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -41,14 +41,7 @@
 
 @media (min-width: 700px) {
     .movie {
-        height: 18rem;
-        width: 12rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .movie {
-        height: 24rem;
-        width: 16rem;
+        height: 16.5rem;
+        width: 11rem;
     }
 }
