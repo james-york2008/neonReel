@@ -38,6 +38,10 @@
     justify-content: space-around;
 }
 
+#search, #searchBar {
+    background-color: rgb(0, 2, 30);
+}
+
 #searchWrapper {
     display: flex;
 }
@@ -111,7 +115,7 @@
     }
 
     #heroSubtitle {
-        max-width: 20rem;
+        max-width: 30rem;
         line-height: 1.5rem;
         font-size: 1.2rem;
     }

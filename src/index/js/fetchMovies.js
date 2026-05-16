@@ -17,7 +17,6 @@ let getSelectedGenres = () => {
 
 let handleRandom = async () => {
     const randomPage = Math.floor(Math.random() * 500) + 1
-    const randomMovie = Math.floor(Math.random() * 20)
     let res
 
     const selectedGenres = getSelectedGenres().join(',')
@@ -29,14 +28,18 @@ let handleRandom = async () => {
     }
 
     if (!res.ok) {
-        throw new Error(`http ${res.status}`)
+        throw new Error(`HTTP ${res.status}`)
     }
 
     const data = await res.json()
-    return data.results[randomMovie]
+    const randomMovie = data.results[Math.floor(Math.random() * data.results.length)]
+    console.log(randomMovie)
+
+    return randomMovie
 }
 
 let checkFilters = async () => {
+    const searchBar = document.getElementById('searchBar')
     let value = searchBar.value
     const selectedGenres = getSelectedGenres().join(',')
     let fromYear = document.getElementById('fromYear').value
@@ -65,12 +68,17 @@ let checkFilters = async () => {
 
     if (value) {
         params.append('query', value)
-        params.delete('selectedGenres', 'fromYear', 'toYear')
+        params.delete('with_genres')
+        params.delete('primary_release_date.gte')
+        params.delete('primary_release_date.lte')
 
         genreFilters.style.textDecoration = 'line-through'
         genreFilters.style.textDecorationColor = 'cyan'
         genreFilters.style.textDecorationThickness = '0.2rem'
         genreFilters.style.opacity = '0.1'
+        
+        let filters = document.getElementById('filters')
+        filters.disabled = true
 
         yearFilters.style.textDecoration = 'line-through'
         yearFilters.style.textDecorationColor = 'cyan'
@@ -85,13 +93,15 @@ let checkFilters = async () => {
         yearFilters.style.textDecoration = 'none'
         genreFilters.style.opacity = '1'
         yearFilters.style.opacity = '1'
-    
+            
+        let filters = document.getElementById('filters')
+        filters.disabled = false
     }
 
     const res = await fetch(url)
 
     if (!res.ok) {
-        throw new Error(`http ${res.status}`)
+        throw new Error(`HTTP ${res.status}`)
     }
 
     const data = await res.json()
