@@ -42,8 +42,6 @@ let checkFilters = async () => {
     let fromYear = document.getElementById('fromYear').value
     let toYear = document.getElementById('toYear').value
 
-
-
     const params = new URLSearchParams({
         api_key: '2ef7e9ce6c4341359a76e1ac108b1af3'
     })
@@ -72,10 +70,12 @@ let checkFilters = async () => {
         genreFilters.style.textDecoration = 'line-through'
         genreFilters.style.textDecorationColor = 'cyan'
         genreFilters.style.textDecorationThickness = '0.2rem'
+        genreFilters.style.opacity = '0.1'
 
         yearFilters.style.textDecoration = 'line-through'
         yearFilters.style.textDecorationColor = 'cyan'
         yearFilters.style.textDecorationThickness = '0.2rem'
+        yearFilters.style.opacity = '0.1'
         
         url = `https://api.themoviedb.org/3/search/movie?${params}`
     } else if (!value) {
@@ -83,9 +83,10 @@ let checkFilters = async () => {
 
         genreFilters.style.textDecoration = 'none'
         yearFilters.style.textDecoration = 'none'
+        genreFilters.style.opacity = '1'
+        yearFilters.style.opacity = '1'
+    
     }
-
-
 
     const res = await fetch(url)
 
