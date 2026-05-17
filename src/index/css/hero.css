@@ -9,6 +9,7 @@
         rgb(255, 94, 163), 
         rgb(0, 12, 255));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 0.3rem 1rem;
     font-size: 1.5rem;
