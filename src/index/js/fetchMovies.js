@@ -17,15 +17,29 @@ let getSelectedGenres = () => {
 
 let handleRandom = async () => {
     const randomPage = Math.floor(Math.random() * 500) + 1
-    let res
 
     const selectedGenres = getSelectedGenres().join(',')
+    let fromYear = document.getElementById('fromYear').value
+    let toYear = document.getElementById('toYear').value
+
+    const params = new URLSearchParams({
+        api_key: '2ef7e9ce6c4341359a76e1ac108b1af3'
+    })
 
     if (selectedGenres) {
-        res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&with_genres=${selectedGenres}&sort_by=popularity.desc&page=${randomPage}`) 
-    } else {
-        res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&page=${randomPage}`)
+        params.append('with_genres', selectedGenres)
     }
+
+    if (fromYear) {
+        params.append('primary_release_date.gte', `${fromYear}-01-01`)
+    }
+
+    if (toYear) {
+        params.append('primary_release_date.lte', `${toYear}-12-31`)
+    }
+
+    let url = `https://api.themoviedb.org/3/discover/movie?${params}&page=${randomPage}`
+    const res = await fetch(url)
 
     if (!res.ok) {
         throw new Error(`HTTP ${res.status}`)
@@ -33,7 +47,6 @@ let handleRandom = async () => {
 
     const data = await res.json()
     const randomMovie = data.results[Math.floor(Math.random() * data.results.length)]
-    console.log(randomMovie)
 
     return randomMovie
 }
