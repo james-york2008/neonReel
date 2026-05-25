@@ -27,7 +27,7 @@ let renderMovies = async (movieArray) => {
         <p class="movieYear">${year}</p>
         <img src="images/star.png" alt="" class="star">
 
-        <p class="voteAverage">${movie.vote_average}</p>`
+        <p class="voteAverage">${movie.vote_average.toFixed(1)}</p>`
 
         movies.append(article)
     }) 
@@ -109,7 +109,7 @@ random.addEventListener('click', async () => {
     <p class="movieYear">${year}</p>
     <img src="images/star.png" alt="" class="star">
 
-    <p class="voteAverage">${movie.vote_average}</p>`
+    <p class="voteAverage">${movie.vote_average.toFixed(1)}</p>`
 
     movies.append(article)
 })
