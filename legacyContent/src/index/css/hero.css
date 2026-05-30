@@ -1,0 +1,135 @@
+#logo, #logoWrapper {
+    height: 7rem;
+    background-color: transparent;
+}
+
+#heroTitle {
+    background: linear-gradient(
+        90deg, 
+        rgb(255, 94, 163), 
+        rgb(0, 12, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.3rem 1rem;
+    font-size: 1.5rem;
+}
+
+#heroTitle .whiteText {
+    color: white;
+    -webkit-text-fill-color: white;
+    background-color: transparent;
+}
+
+#heroSubtitle {
+    max-width: 10rem;
+    background-color: transparent;
+    color: grey;
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+}
+
+#search {
+    margin: 1rem;
+    border: 2px solid rgba(55, 55, 100, 0.5);
+    padding: 0.3rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#search, #searchBar {
+    background-color: rgb(0, 2, 30);
+}
+
+#searchWrapper {
+    display: flex;
+}
+
+#searchBar {
+    width: 15rem;
+    box-shadow: none;
+    border: none;
+    color: white;
+}
+
+#search img {
+    height: 2rem;
+    cursor: pointer;
+}
+
+#submitSearch {
+    background: linear-gradient(
+        -45deg, 
+        rgb(255, 94, 163), 
+        rgb(0, 12, 255));
+    border: none;
+    color: white;
+    padding: 0 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto 0;
+}
+
+@media (min-width: 700px) {
+    #search {
+        max-width: 75%;
+    }
+
+    #submitSearch {
+        padding: 0.5rem 1.3rem;
+    }
+
+    #heroTitle {
+        font-size: 2.3rem;
+    }
+
+    #heroSubtitle {
+        max-width: 17rem;
+        line-height: 1.5rem;
+    }
+
+    #logo {
+        height: 9rem;
+    }
+}
+
+@media (min-width: 800px) {
+    #search img {
+        height: 3rem;
+    }
+
+    #searchBar, #submitSearch {
+        font-size: 1rem;
+    }
+
+    #searchBar {
+        width: 25rem;
+        padding-left: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #heroTitle {
+        font-size: 3rem;
+    }
+
+    #heroSubtitle {
+        max-width: 30rem;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    #search {
+        max-width: 60%;
+    }
+
+    #search img {
+        height: 4rem;
+    }
+
+    #searchBar, #submitSearch {
+        font-size: 1.3rem;
+    }
+}
