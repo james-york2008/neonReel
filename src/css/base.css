@@ -18,12 +18,6 @@ body {
     font-size: 1.1rem;
 }
 
-#backgroundImageWrapper {
-    background: url(../../../images/heroImage.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
 #backgroundImageWrapper #hero, #genreFiltersWrapper {
     background-color: transparent;
 }

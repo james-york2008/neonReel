@@ -1,6 +1,6 @@
 import Hero from './components/Hero'
 import Filters from './components/Filters'
-import Movies from './components/movies'
+import Movies from './components/Movies'
 import Random from './components/Random'
 import Footer from './components/Footer'
 
@@ -12,9 +12,7 @@ function App() {
     <>
       <div id="backgroundImageWrapper" style={{
       backgroundImage: `url(${heroImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}>
+      backgroundSize: 'cover',}}>
         <Hero />
         <Filters />
       </div>
