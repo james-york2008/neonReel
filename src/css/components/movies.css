@@ -4,11 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-}
-
-#movies article {
     justify-content: center;
-
 }
 
 .movie {
