@@ -1,5 +1,5 @@
-import logo from '../assets/logo.png'
-import search from '../assets/search.png'
+import logo from '../../assets/logo.png'
+import search from '../../assets/search.png'
 
 export default function Hero () {
   return (

@@ -1,8 +1,8 @@
-import Hero from './components/Hero'
-import Filters from './components/Filters'
-import Movies from './components/Movies'
-import Random from './components/Random'
-import Footer from './components/Footer'
+import Hero from './components/hero/Hero'
+import Filters from './components/filters/Filters'
+import Movies from './components/movies/Movies'
+import Random from './components/random/Random'
+import Footer from './components/footer/Footer'
 
 import heroImage from './assets/heroImage.png'
 
