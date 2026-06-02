@@ -22,6 +22,11 @@ body {
     background-color: transparent;
 }
 
+#backgroundImageWrapper {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 @media (min-width: 700px) {
     .sectionTitle {
         font-size: 1.3rem;
@@ -32,5 +37,9 @@ body {
 @media (min-width: 992px) {
     .sectionTitle {
         font-size: 1.5rem
+    }
+
+    #backgroundImageWrapper {
+        background-size: cover;
     }
 }

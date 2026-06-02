@@ -1,6 +1,5 @@
 #logo, #logoWrapper {
     height: 7rem;
-    background-color: transparent;
 }
 
 #heroTitle {
@@ -18,12 +17,10 @@
 #heroTitle .whiteText {
     color: white;
     -webkit-text-fill-color: white;
-    background-color: transparent;
 }
 
 #heroSubtitle {
     max-width: 10rem;
-    background-color: transparent;
     color: grey;
     padding: 0 1rem 1rem;
     font-size: 0.9rem;
@@ -36,7 +33,6 @@
     padding: 0.3rem;
     border-radius: 15px;
     display: flex;
-    justify-content: space-around;
 }
 
 #search, #searchBar {
@@ -48,7 +44,7 @@
 }
 
 #searchBar {
-    width: 15rem;
+    width: 14rem;
     box-shadow: none;
     border: none;
     color: white;
