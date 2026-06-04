@@ -1,7 +1,11 @@
 import { genres } from "../../data/genres"
 import Genre from "./Genre"
 
-export default function Filters () {
+type Props = {
+  genreChange: (genre: number) => void
+}
+
+export default function Filters ({ genreChange }: Props) { 
   return (
     <form id="filters">
       <div id="genreFiltersWrapper">
@@ -9,7 +13,7 @@ export default function Filters () {
           <legend className="sectionTitle">QUICK PICKS</legend>
 
           {genres.map(genre => (
-            <Genre key={genre.id} genre={genre} />
+            <Genre key={genre.id} genre={genre} genreChange={genreChange} />
           ))}
         </fieldset>
       </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Movie } from "../types/movie";
-import { fetchRecommendedMovies, searchMovies } from "./fetchMovies";
+import { fetchRecommendedMovies, searchMovies, handleGenres } from "./fetchMovies";
 
 import Hero from "./hero/Hero";
 import Filters from './filters/Filters'
@@ -10,9 +10,9 @@ import Footer from './footer/Footer'
 
 import heroImage from '../assets/heroImage.png'
 
-
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
+  const [selectedGenres, setSelectedGenres] = useState<number[]>([])
 
   useEffect(() => {
     async function loadMovies() {
@@ -28,12 +28,25 @@ export default function Home() {
     setMovies(res)
   }
 
+  async function genreChange (genre: number) {
+    let updatedGenres
+    if (selectedGenres.includes(genre)) {
+      updatedGenres = selectedGenres.filter((item) => item !== genre)
+    } else {
+      updatedGenres = [...selectedGenres, genre]
+    }
+    setSelectedGenres(updatedGenres)
+
+    const res = await handleGenres(updatedGenres)
+    setMovies(res)
+  }
+  
   return (
     <>
       <div id="backgroundImageWrapper" style={{
       backgroundImage: `url(${heroImage})`}}>
         <Hero onSearch={handleSearch} />
-        <Filters />
+        <Filters genreChange={genreChange} />
       </div>
     
       <Movies movies={movies} />
@@ -42,3 +55,5 @@ export default function Home() {
     </>
   )
 }
+
+
