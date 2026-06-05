@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Movie } from "../types/movie";
-import { fetchRecommendedMovies, searchMovies, handleGenres } from "./fetchMovies";
+import { fetchRecommendedMovies, searchMovies, handleGenres, handleYearFilter, } from "./fetchMovies";
 
 import Hero from "./hero/Hero";
 import Filters from './filters/Filters'
@@ -13,6 +13,8 @@ import heroImage from '../assets/heroImage.png'
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
   const [selectedGenres, setSelectedGenres] = useState<number[]>([])
+  const [fromYear, setFromYear] = useState<number>()
+  const [toYear, setToYear] = useState<number>()
 
   useEffect(() => {
     async function loadMovies() {
@@ -40,13 +42,21 @@ export default function Home() {
     const res = await handleGenres(updatedGenres)
     setMovies(res)
   }
-  
+
+  async function yearFilter (fromYearNumber: number, toYearNumber: number) {
+    setFromYear(fromYearNumber)
+    setToYear(toYearNumber)
+
+    const res = await handleYearFilter(fromYearNumber, toYearNumber)
+    setMovies(res)
+  }
+
   return (
     <>
       <div id="backgroundImageWrapper" style={{
       backgroundImage: `url(${heroImage})`}}>
         <Hero onSearch={handleSearch} />
-        <Filters genreChange={genreChange} />
+        <Filters genreChange={genreChange} yearFilter={yearFilter}/>
       </div>
     
       <Movies movies={movies} />

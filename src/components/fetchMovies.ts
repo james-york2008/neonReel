@@ -60,3 +60,32 @@ export async function handleGenres(selectedGenres: Array<number>): Promise<Movie
 
   return data?.results ?? []
 }
+
+export async function handleYearFilter(fromYear: number | void, toYear: number | void): Promise<Movie[]> {
+  let data
+
+  try {
+    let res
+    if (!fromYear) { 
+      res = await fetch(`${baseUrl}/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&primary_release_date.lte=${toYear}-12-31`)
+    } else if (!toYear) {
+      res = await fetch(`${baseUrl}/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&primary_release_date.gte=${fromYear}-01-01`)
+    } else {
+      res = await fetch(`${baseUrl}/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&primary_release_date.gte=${fromYear}-01-01&primary_release_date.lte=${toYear}-12-31`)
+    }
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`)
+    }
+
+    if (!data) {
+      data = await fetchRecommendedMovies()
+    }
+  
+    data = await res.json()
+  } catch (err) {
+    console.error(err)
+  }
+
+  return data?.results ?? []
+}

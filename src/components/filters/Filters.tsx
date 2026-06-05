@@ -3,9 +3,12 @@ import Genre from "./Genre"
 
 type Props = {
   genreChange: (genre: number) => void
+  yearFilter: Function
 }
 
-export default function Filters ({ genreChange }: Props) { 
+export default function Filters ({ genreChange, yearFilter }: Props) { 
+  let fromYearNumber: number
+  let toYearNumber: number
   return (
     <form id="filters">
       <div id="genreFiltersWrapper">
@@ -23,12 +26,18 @@ export default function Filters ({ genreChange }: Props) {
         
         <div id="fromYearDiv">
           <label htmlFor="fromYear">From</label>
-          <input type="number" id="fromYear" />
+          <input type="number" id="fromYear" onChange={(event) => {
+            fromYearNumber = Number(event.target.value)
+            yearFilter(fromYearNumber, toYearNumber)
+          }} />
         </div>
 
         <div id="toYearDiv">
           <label htmlFor="toYear">To</label>
-          <input type="number" id="toYear" />
+          <input type="number" id="toYear"  onChange={(event) => {
+            toYearNumber = Number(event.target.value)
+            yearFilter(fromYearNumber, toYearNumber)
+          }} />
         </div>
       </fieldset>    
     </form>
