@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Movie } from "../types/movie";
-import { fetchRecommendedMovies, searchMovies, handleGenres, handleYearFilter, } from "./fetchMovies";
+import { fetchRecommendedMovies, searchMovies, handleGenres, handleYearFilter, handleRandom } from "./fetchMovies";
 
 import Hero from "./hero/Hero";
 import Filters from './filters/Filters'
@@ -51,6 +51,12 @@ export default function Home() {
     setMovies(res)
   }
 
+  async function randomMovie() {
+    const res = await handleRandom()
+    setMovies(res)
+  }
+
+
   return (
     <>
       <div id="backgroundImageWrapper" style={{
@@ -60,7 +66,7 @@ export default function Home() {
       </div>
     
       <Movies movies={movies} />
-      <Random />
+      <Random handleRandom={randomMovie} />
       <Footer />
     </>
   )
