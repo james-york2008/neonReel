@@ -45,9 +45,8 @@ export async function searchMovies(search: string): Promise<Movie[]> {
 
 export async function handleGenres(selectedGenres: Array<number>): Promise<Movie[]> {
   let data
-
   try {
-    const res = await fetch(`${baseUrl}/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&with_genres=${selectedGenres}`)
+    let res = await fetch(`${baseUrl}/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&with_genres=${selectedGenres}`)
 
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)
