@@ -13,8 +13,6 @@ import heroImage from '../assets/heroImage.png'
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
   const [selectedGenres, setSelectedGenres] = useState<number[]>([])
-  const [fromYear, setFromYear] = useState<number>()
-  const [toYear, setToYear] = useState<number>()
 
   useEffect(() => {
     async function loadMovies() {
