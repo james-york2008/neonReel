@@ -42,9 +42,6 @@ export default function Home() {
   }
 
   async function yearFilter (fromYearNumber: number, toYearNumber: number) {
-    setFromYear(fromYearNumber)
-    setToYear(toYearNumber)
-
     const res = await handleYearFilter(fromYearNumber, toYearNumber)
     setMovies(res)
   }
