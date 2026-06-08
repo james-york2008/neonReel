@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Movie } from "../types/movie";
-import { fetchRecommendedMovies, searchMovies, handleGenres, handleYearFilter, handleRandom } from "./fetchMovies";
+import { fetchRecommendedMovies, searchMovies, handleFilters, handleRandom } from "./fetchMovies";
 
 import Hero from "./hero/Hero";
 import Filters from './filters/Filters'
@@ -13,6 +13,8 @@ import heroImage from '../assets/heroImage.png'
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
   const [selectedGenres, setSelectedGenres] = useState<number[]>([])
+  const [fromYear, setFromYear] = useState<number>()
+  const [toYear, setToYear] = useState<number>()
 
   useEffect(() => {
     async function loadMovies() {
@@ -37,12 +39,14 @@ export default function Home() {
     }
     setSelectedGenres(updatedGenres)
 
-    const res = await handleGenres(updatedGenres)
+    const res = await handleFilters(updatedGenres, fromYear, toYear)
     setMovies(res)
   }
 
   async function yearFilter (fromYearNumber: number, toYearNumber: number) {
-    const res = await handleYearFilter(fromYearNumber, toYearNumber)
+    setFromYear(fromYearNumber)
+    setToYear(toYearNumber)
+    const res = await handleFilters(selectedGenres, fromYearNumber, toYearNumber)
     setMovies(res)
   }
 
@@ -66,5 +70,3 @@ export default function Home() {
     </>
   )
 }
-
-
