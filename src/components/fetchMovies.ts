@@ -50,15 +50,15 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
   })
 
   if (selectedGenres) {
-      params.append('with_genres', `${selectedGenres}`)
+    params.append('with_genres', `${selectedGenres}`)
   }
 
   if (fromYear) {
-      params.append('primary_release_date.gte', `${fromYear}-01-01`)
+    params.append('primary_release_date.gte', `${fromYear}-01-01`)
   }
 
   if (toYear) {
-      params.append('primary_release_date.lte', `${toYear}-12-31`)
+    params.append('primary_release_date.lte', `${toYear}-12-31`)
   }
 
   let url = `https://api.themoviedb.org/3/discover/movie?${params}`
@@ -79,11 +79,28 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
   return data?.results ?? []
 }
 
-export async function handleRandom(): Promise<Movie[]> {
+export async function handleRandom(selectedGenres: Array<number> | void, fromYear: number | void, toYear: number | void): Promise<Movie[]> {
   let data
-  try {
-    let res = await fetch(`${baseUrl}/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3`)
+  const params = new URLSearchParams({
+    api_key: '2ef7e9ce6c4341359a76e1ac108b1af3'
+  })
 
+  if (selectedGenres) {
+    params.append('with_genres', `${selectedGenres}`)
+  }
+
+  if (fromYear) {
+    params.append('primary_release_date.gte', `${fromYear}-01-01`)
+  }
+
+  if (toYear) {
+    params.append('primary_release_date.lte', `${toYear}-12-31`)
+  }
+
+  let url = `https://api.themoviedb.org/3/discover/movie?${params}`
+  
+  try {
+    let res = await fetch(`${url}`)
 
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)
@@ -97,11 +114,11 @@ export async function handleRandom(): Promise<Movie[]> {
 
   let randomPage
     data?.total_pages <= 500 
-        ? randomPage = Math.ceil(Math.random() * data.total_pages)
-        : randomPage = Math.ceil(Math.random() * 500)
+      ? randomPage = Math.ceil(Math.random() * data.total_pages)
+      : randomPage = Math.ceil(Math.random() * 500)
 
   try {
-    let res = await fetch(`${baseUrl}/discover/movie?api_key=2ef7e9ce6c4341359a76e1ac108b1af3&page=${randomPage}`)
+    let res = await fetch(`${url}&page=${randomPage}`)
     
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)

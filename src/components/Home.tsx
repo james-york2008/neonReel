@@ -51,10 +51,9 @@ export default function Home() {
   }
 
   async function randomMovie() {
-    const res = await handleRandom()
+    const res = await handleRandom(selectedGenres, fromYear, toYear)
     setMovies(res)
   }
-
 
   return (
     <>
