@@ -97,10 +97,10 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
     params.append('primary_release_date.lte', `${toYear}-12-31`)
   }
 
-  let url = `https://api.themoviedb.org/3/discover/movie?${params}`
+  const url = `https://api.themoviedb.org/3/discover/movie?${params}`
   
   try {
-    let res = await fetch(`${url}`)
+    const  res = await fetch(`${url}`)
 
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)
@@ -112,13 +112,13 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
   }
 
 
-  let randomPage
+  let randomPage: number
     data?.total_pages <= 500 
       ? randomPage = Math.ceil(Math.random() * data.total_pages)
       : randomPage = Math.ceil(Math.random() * 500)
 
   try {
-    let res = await fetch(`${url}&page=${randomPage}`)
+    const res = await fetch(`${url}&page=${randomPage}`)
     
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)
@@ -129,7 +129,7 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
     console.error(err)
   }
 
-  let randomMovie = data.results[Math.floor(Math.random() * data.results.length)]
+  const randomMovie = data.results[Math.floor(Math.random() * data.results.length)]
 
   return [randomMovie]
 }
