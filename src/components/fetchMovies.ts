@@ -1,12 +1,13 @@
 import type { Movie } from '../types/movie'
 
 const baseUrl = 'https://api.themoviedb.org/3'
+const apiKey = import.meta.env.VITE_TMDB_API_KEY
 
 export async function fetchRecommendedMovies(): Promise<Movie[]> {
   let data
 
   try {
-    const res = await fetch(`${baseUrl}/trending/movie/week?api_key=2ef7e9ce6c4341359a76e1ac108b1af3`)
+    const res = await fetch(`${baseUrl}/trending/movie/week?api_key=${apiKey}`)
     
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)
@@ -29,7 +30,7 @@ export async function searchMovies(search: string): Promise<Movie[]> {
   }
 
   try {
-    const res = await fetch(`${baseUrl}/search/movie?query=${search}&api_key=2ef7e9ce6c4341359a76e1ac108b1af3`)
+    const res = await fetch(`${baseUrl}/search/movie?query=${search}&api_key=${apiKey}`)
    
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)
@@ -46,7 +47,7 @@ export async function searchMovies(search: string): Promise<Movie[]> {
 export async function handleFilters(selectedGenres: Array<number> | void, fromYear: number | void, toYear: number | void): Promise<Movie[]> {
   let data
   const params = new URLSearchParams({
-    api_key: '2ef7e9ce6c4341359a76e1ac108b1af3'
+    api_key: apiKey
   })
 
   if (selectedGenres) {
@@ -82,7 +83,7 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
 export async function handleRandom(selectedGenres: Array<number> | void, fromYear: number | void, toYear: number | void): Promise<Movie[]> {
   let data
   const params = new URLSearchParams({
-    api_key: '2ef7e9ce6c4341359a76e1ac108b1af3'
+    api_key: apiKey
   })
 
   if (selectedGenres) {

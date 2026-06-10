@@ -1,6 +1,6 @@
 Live Page: https://james-york2008.github.io/neonReel/
 
-About: Neon Reel is a movie discovery web application made using the TMDB API. The main focus of this project was to create an engaging interface where users can browse, filter, search, or get a randomly selected movie. One important note regarding this project is it does not use a backend, and in turn the TMDB API key is exposed. I understand this is not ideal for production-level web applications, and for this project I plan to actively maintain and replace the API key as necessary. This project was initially made using vanilla JavaScript, but has since been reworked with React and TypeScript to improve scalability.
+About: Neon Reel is a movie discovery web application made using the TMDB API. The main focus of this project was to create an engaging interface where users can browse, filter, search, or get a randomly selected movie. One important note regarding this project is it does not use a backend, and in turn the TMDB API key is exposed. I understand this is not ideal for production-level web applications, and for this project I plan to actively maintain and replace the API key as necessary. I have created a .env file and stored the key there so that it isn't exposed on GitHub, but I am aware it is still exposed. This project was initially made using vanilla JavaScript, but has since been reworked with React and TypeScript to improve scalability.
 
 Tech Stack: -ReactJS -TypeScript -CSS -TMDB API
 
@@ -16,5 +16,8 @@ Working with TypeScript highlighted the importance of properly defining data str
 
 Deployment and Configuration
 Deploying the React version to GitHub Pages displayed a configuration error where the page would crash and simply white screen. This bug was caused by the Vite config file not having a base path. Troubleshooting this problem, and many similar to it, provided experience with build tools and frontend deployment workflows.
+
+API key storage
+In earlier versions, the API key was written out every time it was used, and that was committed to GitHub. Since then, I have replaced the key and added a .env file to hide it from GitHub. Unfortunately, without a backend server, I cannot securely store this key, but I have chosen to maintain the key myself.
 
 Potential Future Improvements: -Make search and filter functionalities work together seamlessly. -Create or commission a backend to securely store the API key. -Explore TMDB's watch-provider integrations to display where movies can be streamed or purchased.
