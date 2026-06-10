@@ -5,12 +5,14 @@ type Props = {
   movies: Movie[]
 }
 
+const apiKey = import.meta.env.VITE_TMDB_API_KEY
+
 export default function RenderMovies({ movies }: Props) {
   return(
     <div id="movies">
       {movies.map(movie => (
         <article className="movie" key={movie.id} style={{
-          background: `url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path}?api_key=2ef7e9ce6c4341359a76e1ac108b1af3), black`,
+          background: `url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path}?api_key=${apiKey}), black`,
         }}>
           <h6>{movie.title}</h6>
           <p className="movieYear">{movie.release_date?.split('-')[0]}</p>
