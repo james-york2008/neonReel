@@ -45,13 +45,17 @@ export default function App() {
   }
 
   const yearFilter = useCallback(
-    async (fromYearNumber: number, toYearNumber: number) => {
+    async (fromYearNumber: number | undefined, toYearNumber: number | undefined) => {
       if (debounceTimeout) {
         clearTimeout(debounceTimeout)
       }
+      
+      if (!fromYearNumber) fromYearNumber = fromYear
+      if (!toYearNumber) toYearNumber = toYear
     
       setFromYear(fromYearNumber)
       setToYear(toYearNumber)
+
       
       const newTimeout = setTimeout(async () => {
         const res = await handleFilters(selectedGenres, fromYearNumber, toYearNumber)

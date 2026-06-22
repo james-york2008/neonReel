@@ -43,7 +43,10 @@ Neon Reel is a movie discovery web application made using the TMDB API. The main
 
 
 ## Tech Stack: 
--ReactJS -TypeScript -CSS -TMDB API
+- ReactJS 
+- TypeScript 
+- CSS 
+- TMDB API
 
 
 ## Challenges Faced and Lessons Learned:
@@ -67,4 +70,7 @@ API key storage
 In earlier versions, the API key was written out every time it was used, and that was committed to GitHub. Since then, I have replaced the key and added a .env file to hide it from GitHub. Unfortunately, without a backend server, I cannot securely store this key, but I have chosen to maintain the key myself.
 
 
-Potential Future Improvements: -Make search and filter functionalities work together seamlessly. -Create or commission a backend to securely store the API key. -Explore TMDB's watch-provider integrations to display where movies can be streamed or purchased.
+## Potential Future Improvements: 
+- Make search and filter functionalities work together seamlessly. 
+- Create or commission a backend to securely store the API key. 
+- Explore TMDB's watch-provider integrations to display where movies can be streamed or purchased.

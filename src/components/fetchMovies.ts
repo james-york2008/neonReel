@@ -54,16 +54,15 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
     params.append('with_genres', `${selectedGenres}`)
   }
 
-  if (fromYear) {
+  if (typeof fromYear === 'number' && fromYear.toString().length > 3) {
     params.append('primary_release_date.gte', `${fromYear}-01-01`)
   }
 
-  if (toYear) {
+  if (typeof toYear === 'number' && toYear.toString().length > 3) {
     params.append('primary_release_date.lte', `${toYear}-12-31`)
   }
 
   let url = `https://api.themoviedb.org/3/discover/movie?${params}`
-
   
   try {
     let res = await fetch(`${url}`)
@@ -77,7 +76,11 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
     console.error(err)
   }
 
-  return data?.results ?? []
+  if (data.results.length < 1) {
+    data.results = [undefined]
+  }
+
+  return data.results
 }
 
 export async function handleRandom(selectedGenres: Array<number> | void, fromYear: number | void, toYear: number | void): Promise<Movie[]> {
@@ -90,16 +93,16 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
     params.append('with_genres', `${selectedGenres}`)
   }
 
-  if (fromYear) {
+  if (typeof fromYear === 'number' && fromYear.toString().length > 3) {
     params.append('primary_release_date.gte', `${fromYear}-01-01`)
   }
 
-  if (toYear) {
+  if (typeof toYear === 'number' && toYear.toString().length > 3) {
     params.append('primary_release_date.lte', `${toYear}-12-31`)
   }
 
   const url = `https://api.themoviedb.org/3/discover/movie?${params}`
-  
+
   try {
     const  res = await fetch(`${url}`)
 
@@ -130,7 +133,7 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
     console.error(err)
   }
 
-  const randomMovie = data.results[Math.floor(Math.random() * data.results.length)]
+  const randomMovie = [data.results[Math.floor(Math.random() * data.results.length)]]
 
-  return [randomMovie]
+  return randomMovie
 }
