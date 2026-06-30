@@ -5,8 +5,8 @@
 #heroTitle {
     background: linear-gradient(
         90deg, 
-        rgb(255, 94, 163), 
-        rgb(0, 12, 255));
+        rgb(0, 255, 255), 
+        rgb(255, 100, 230) 20%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -15,8 +15,8 @@
 }
 
 #heroTitle .whiteText {
-    color: white;
-    -webkit-text-fill-color: white;
+    color: rgb(174, 174, 174);
+    -webkit-text-fill-color: rgb(174, 174, 174);
 }
 
 #heroSubtitle {
@@ -47,7 +47,10 @@
     width: 14rem;
     box-shadow: none;
     border: none;
-    color: white;
+}
+
+#searchBar, #searchBar::placeholder {
+    color: rgb(158, 158, 158);
 }
 
 #search img {
@@ -58,7 +61,7 @@
 #submitSearch {
     background: linear-gradient(
         -45deg, 
-        rgb(255, 94, 163), 
+        rgb(135, 24, 113), 
         rgb(0, 12, 255));
     border: none;
     color: white;
