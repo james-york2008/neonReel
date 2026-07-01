@@ -31,7 +31,7 @@ export default function App() {
     setMovies(res)
   }
 
-  async function genreChange (genre: number) {
+  async function genreChange (genre: number) {    
     let updatedGenres
     if (selectedGenres.includes(genre)) {
       updatedGenres = selectedGenres.filter((item) => item !== genre)
@@ -73,14 +73,16 @@ export default function App() {
 
   return (
     <>
-      <div id="backgroundImageWrapper" style={{
-      backgroundImage: `url(${heroImage})`}}>
-        <Hero onSearch={handleSearch} />
-        <Filters genreChange={genreChange} yearFilter={yearFilter}/>
-      </div>
-    
-      <Movies movies={movies} />
-      <Random handleRandom={randomMovie} />
+      <main>
+        <div id="backgroundImageWrapper" style={{
+        backgroundImage: `url(${heroImage})`}}>
+          <Hero onSearch={handleSearch} />
+          <Filters genreChange={genreChange} yearFilter={yearFilter} />
+        </div>
+      
+        <Movies movies={movies} />
+        <Random handleRandom={randomMovie} />
+      </main>
       <Footer />
     </>
   )

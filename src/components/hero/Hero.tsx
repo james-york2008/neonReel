@@ -16,7 +16,7 @@ export default function Hero ({ onSearch }: {
     <div id="hero">
       <a href="index.html" id="logoWrapper"><img id="logo" src={logo} alt="Link to home page" loading="lazy" /></a>
 
-      <h2 id="heroTitle"><span className="whiteText">FIND YOUR</span><br/>NEXT MOVIE</h2>
+      <h1 id="heroTitle"><span className="whiteText">FIND YOUR</span><br/>NEXT MOVIE</h1>
       <p id="heroSubtitle">Search by title, year, or explore suggestions to discover your next favorite movie.</p>
 
 

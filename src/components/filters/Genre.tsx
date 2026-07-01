@@ -7,7 +7,7 @@ type Props = {
 
 export default function Genres({ genre, genreChange }: Props) {
   return(
-    <label htmlFor={genre.genreLabel}>
+    <label htmlFor={genre.genreLabel} className="genreContainer">
       <input type="checkbox" id={genre.genreLabel} value={genre.id} onChange={() => genreChange(genre.id)} />
       <p className="genre">{genre.genreName}</p>
     </label>

@@ -8,7 +8,7 @@ type Props = {
 export default function Movies ({ movies }:Props) { 
   return (
     <div id="moviesWrapper">
-      <h4 className="sectionTitle">TRENDING NOW</h4>
+      <h2 className="sectionTitle">TRENDING NOW</h2>
   
         <RenderMovies movies={movies}/>
     </div>

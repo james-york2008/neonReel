@@ -26,7 +26,7 @@ export default function Filters ({ genreChange, yearFilter }: Props) {
         
         <div id="fromYearDiv">
           <label htmlFor="fromYear">From</label>
-          <input type="number" id="fromYear" onChange={(event) => {
+          <input type="number" id="fromYear" placeholder="Year" onChange={(event) => {
             fromYearNumber = Number(event.target.value)
             yearFilter(fromYearNumber, toYearNumber)
           }} />
@@ -34,7 +34,7 @@ export default function Filters ({ genreChange, yearFilter }: Props) {
 
         <div id="toYearDiv">
           <label htmlFor="toYear">To</label>
-          <input type="number" id="toYear"  onChange={(event) => {
+          <input type="number" id="toYear" placeholder="Year" onChange={(event) => {
             toYearNumber = Number(event.target.value)
             yearFilter(fromYearNumber, toYearNumber)
           }} />
