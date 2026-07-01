@@ -15,20 +15,19 @@
 }
 
 #random p {
-    color: white;
+    color: rgb(193, 193, 193);
     background-color: rgb(0, 2, 20);
 }
 
 #random p span {
-    background-color: rgb(0, 2, 20);
-    color: grey;
+    color: rgb(153, 153, 153);
 }
 
 #random button {
     color: white;
-        background: linear-gradient(
+    background: linear-gradient(
         -45deg, 
-        rgb(255, 94, 163), 
+        rgb(135, 24, 113), 
         rgb(0, 12, 255));
     margin-left: 1rem;
     padding: 0.5rem 0.7rem;

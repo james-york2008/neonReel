@@ -29,7 +29,11 @@
 
 .genre {
     padding: 0 0.2rem;
-    color: white;
+    color: rgb(193, 193, 193);
+}
+
+.genreContainer input:focus-visible {
+    outline: 2px solid purple;
 }
 
 input[type="checkbox"]:checked {
@@ -41,7 +45,6 @@ label input {
 }
 
 #yearFilter {
-    color: white;
     display: flex;
     justify-content: space-around;
 }
@@ -54,6 +57,13 @@ label input {
 
 #fromYearDiv, #toYearDiv {
     margin: 0.5rem;
+    color: rgb(193, 193, 193);
+    background-color: rgb(0, 0, 20);
+    border-radius: 5px;
+}
+
+#fromYear, #toYear {
+    background-color: rgb(190, 190, 190);
 }
 
 @media (min-width: 700px) {
@@ -68,6 +78,10 @@ label input {
     .genre {
         font-size: 1.3rem;
         padding: 0 0.5rem;
+    }
+
+    .genreContainer {
+        background-color: rgb(0, 2, 30);
     }
 
     

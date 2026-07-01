@@ -7,27 +7,34 @@
 }
 
 .movie {
-    color: white;
-    height: 15rem;
+    color: rgb(205, 205, 205);
+    border-radius: 20px;
+    border: 1px solid rgb(55, 55, 100);
     width: 10rem;
+}
+
+.moviePicture {
+    height: 10rem;
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
     border-radius: 20px;
-    align-content: end;
-    padding: 0.5rem;
 }
 
-.movie h6 {
+.movieContent {
+    padding: 5px;
+}
+
+.movie h3 {
     font-size: 1.2rem;
-}
-
-.movie p, .movie h6 {
-    background-color: transparent;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .movieYear {
-    color: grey;
+    color: rgb(153, 153, 153);
     padding-bottom: 1rem;
 }
 
