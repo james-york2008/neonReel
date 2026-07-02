@@ -22,8 +22,8 @@ export default function Hero ({ onSearch }: {
 
       <form id="search">
           <div id="searchWrapper">
-              <img src={search} alt="" id="submitSearchViaImg" loading="lazy" onClick={handleSearch} />
-              <input type="search" placeholder="Search movies by title or keyword" id="searchBar" value={searchTerm} onChange={(event => {
+              <img src={search} alt="" aria-hidden='true' id="submitSearchViaImg" loading="lazy" onClick={handleSearch} />
+              <input type="search" placeholder="Search movies by title or keyword" id="searchBar" value={searchTerm}  autoComplete='off' onChange={(event => {
                 setSearchTerm(event.target.value)
               })} />
           </div>

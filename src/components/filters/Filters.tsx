@@ -4,9 +4,10 @@ import Genre from "./Genre"
 type Props = {
   genreChange: (genre: number) => void
   yearFilter: Function
+  selectedGenres: number[]
 }
 
-export default function Filters ({ genreChange, yearFilter }: Props) { 
+export default function Filters ({ genreChange, yearFilter, selectedGenres }: Props) { 
   let fromYearNumber: number
   let toYearNumber: number
   return (
@@ -16,7 +17,7 @@ export default function Filters ({ genreChange, yearFilter }: Props) {
           <legend className="sectionTitle">QUICK PICKS</legend>
 
           {genres.map(genre => (
-            <Genre key={genre.id} genre={genre} genreChange={genreChange} />
+            <Genre key={genre.id} genre={genre} genreChange={genreChange} selectedGenres={selectedGenres} />
           ))}
         </fieldset>
       </div>

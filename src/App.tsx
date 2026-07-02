@@ -77,7 +77,7 @@ export default function App() {
         <div id="backgroundImageWrapper" style={{
         backgroundImage: `url(${heroImage})`}}>
           <Hero onSearch={handleSearch} />
-          <Filters genreChange={genreChange} yearFilter={yearFilter} />
+          <Filters genreChange={genreChange} yearFilter={yearFilter} selectedGenres={selectedGenres} />
         </div>
       
         <Movies movies={movies} />
