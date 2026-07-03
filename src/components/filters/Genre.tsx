@@ -15,14 +15,15 @@ export default function Genres({ genre, genreChange, selectedGenres }: Props) {
         value={genre.id} 
         onChange={() => genreChange(genre.id)} 
         onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
-          if (event.key === 'Enter') {
+          if (event.key === "Enter") {
             genreChange(genre.id)
           }
         }}
         checked={selectedGenres.includes(genre.id) 
           ? true
           : false
-        } />
+        } 
+      />
 
       <p className="genre">{genre.genreName}</p>
     </label>

@@ -1,6 +1,6 @@
-import type { Movie } from '../types/movie'
+import type { Movie } from "../types/movie"
 
-const baseUrl = 'https://api.themoviedb.org/3'
+const baseUrl = "https://api.themoviedb.org/3"
 const apiKey = import.meta.env.VITE_TMDB_API_KEY
 
 export async function fetchRecommendedMovies(): Promise<Movie[]> {
@@ -51,15 +51,15 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
   })
 
   if (selectedGenres) {
-    params.append('with_genres', `${selectedGenres}`)
+    params.append("with_genres", `${selectedGenres}`)
   }
 
-  if (typeof fromYear === 'number' && fromYear.toString().length > 3) {
-    params.append('primary_release_date.gte', `${fromYear}-01-01`)
+  if (typeof fromYear === "number" && fromYear.toString().length > 3) {
+    params.append("primary_release_date.gte", `${fromYear}-01-01`)
   }
 
-  if (typeof toYear === 'number' && toYear.toString().length > 3) {
-    params.append('primary_release_date.lte', `${toYear}-12-31`)
+  if (typeof toYear === "number" && toYear.toString().length > 3) {
+    params.append("primary_release_date.lte", `${toYear}-12-31`)
   }
 
   let url = `https://api.themoviedb.org/3/discover/movie?${params}`
@@ -90,15 +90,15 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
   })
 
   if (selectedGenres) {
-    params.append('with_genres', `${selectedGenres}`)
+    params.append("with_genres", `${selectedGenres}`)
   }
 
-  if (typeof fromYear === 'number' && fromYear.toString().length > 3) {
-    params.append('primary_release_date.gte', `${fromYear}-01-01`)
+  if (typeof fromYear === "number" && fromYear.toString().length > 3) {
+    params.append("primary_release_date.gte", `${fromYear}-01-01`)
   }
 
-  if (typeof toYear === 'number' && toYear.toString().length > 3) {
-    params.append('primary_release_date.lte', `${toYear}-12-31`)
+  if (typeof toYear === "number" && toYear.toString().length > 3) {
+    params.append("primary_release_date.lte", `${toYear}-12-31`)
   }
 
   const url = `https://api.themoviedb.org/3/discover/movie?${params}`
