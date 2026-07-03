@@ -1,5 +1,5 @@
 import type { MouseEventHandler } from "react"
-import search from '../../assets/search.png'
+import search from "../../assets/search.png"
 
 type Props = {
   handleRandom: MouseEventHandler
