@@ -27,10 +27,24 @@ body {
     background-repeat: no-repeat;
 }
 
+.errorPageReturnToHomeLink:visited, .pageErrorText {
+    color: rgb(205, 205, 205);
+}
+
+.pageErrorText {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 2rem;
+}
+
 @media (min-width: 700px) {
     .sectionTitle {
         font-size: 1.3rem;
         padding: 1.5rem;
+    }
+
+    .pageErrorText {
+        font-size: 3rem;
     }
 }
 
