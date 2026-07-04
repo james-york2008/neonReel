@@ -7,6 +7,9 @@
 ## About: 
 Neon Reel is a movie discovery web application made using the TMDB API. Users can browse movies, filter by genre and release year, and discover random movies that match the selected filters. The application was made to prioritize accessibility, maintainable design, and user experience.
 
+**Note:** This product uses the TMDB API but is not endorsed or certified by TMDB.
+
+
 ## API Key Notice:
 One important note regarding this project is it does not use a backend, and in turn the TMDB API key is exposed. This is not ideal for production-level web applications, and for this project I plan to actively maintain and replace the API key as necessary. I have created a .env file and stored the key there so that it isn't exposed on GitHub, but I am aware it is still exposed in the compiled application.
 
