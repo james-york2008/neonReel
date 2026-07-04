@@ -27,7 +27,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.errorPageReturnToHomeLink:visited, .pageErrorText {
+.errorPageReturnToHomeLink:visited, .errorPageReturnToHomeLink, .pageErrorText {
     color: rgb(205, 205, 205);
 }
 
