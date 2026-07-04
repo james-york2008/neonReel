@@ -1,6 +1,7 @@
 import logo from "../../assets/logo.png"
 import search from "../../assets/search.png"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Hero ({ onSearch }: { 
   onSearch: (query: string) => void
@@ -14,7 +15,7 @@ export default function Hero ({ onSearch }: {
   
   return (
     <div id="hero">
-      <a href="index.html" id="logoWrapper"><img id="logo" src={logo} alt="Link to home page" /></a>
+      <Link to={'/neonReel'} id="logoWrapper"><img id="logo" src={logo} alt="Link to home page" /></Link>
 
       <h1 id="heroTitle"><span className="whiteText">FIND YOUR</span><br/>NEXT MOVIE</h1>
       <p id="heroSubtitle">Search by title, year, or explore suggestions to discover your next favorite movie.</p>
