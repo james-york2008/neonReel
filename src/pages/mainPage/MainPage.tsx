@@ -64,7 +64,7 @@ export default function MainPage () {
       }, 300)
 
       setDebounceTimeout(newTimeout)
-    }, [debounceTimeout]
+    }, [debounceTimeout, fromYear, toYear, selectedGenres]
   )  
 
   async function randomMovie() {
@@ -78,7 +78,7 @@ export default function MainPage () {
         <div id="backgroundImageWrapper" style={{
         backgroundImage: `url(${heroImage})`}}>
           <Hero onSearch={handleSearch} />
-          <Filters genreChange={genreChange} yearFilter={yearFilter} selectedGenres={selectedGenres} />
+          <Filters genreChange={genreChange} yearFilter={yearFilter} fromYear={fromYear} setFromYear={setFromYear} toYear={toYear} setToYear={setToYear} selectedGenres={selectedGenres} />
         </div>
       
         <Movies movies={movies} />

@@ -12,7 +12,7 @@ export default function RenderMovies({ movies }: Props) {
     <div id="movies">
       {movies.map(movie => {
         if (movie) {
-          let url= `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}?api_key=${apiKey}`
+          const url= `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}?api_key=${apiKey}`
 
           return(
             <article className="movie" key={movie.id}>
