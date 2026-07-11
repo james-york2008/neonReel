@@ -99,6 +99,13 @@ The `.env` file is not included in the repository, so you'll need to provide you
 - Made the landing page its own component instead of assembling it in App to make the application more scalable
 - Implemented URL error handling with React Router to navigate users to the landing page
 
+
+## Code Quality and Type Safety
+### Fixed Linting Issues:
+- Swapped out unnecessary `let` variable declarations for `const`
+- Removed vague `Function` types in favor of more explicit alternatives
+- Replaced fragile local variables with reliable state from parent components
+
 ## Potential Future Improvements: 
 - Make search and filter functionalities work together seamlessly. 
 - Create or commission a backend to securely store the API key. 

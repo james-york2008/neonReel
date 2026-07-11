@@ -31,7 +31,7 @@ export default function Filters ({ genreChange, yearFilter, selectedGenres, from
           <label htmlFor="fromYear">From</label>
           <input type="number" id="fromYear" placeholder="Year" onChange={(event) => {
             setFromYear(+event.target.value)
-            yearFilter(fromYear, toYear)
+            yearFilter(+event.target.value, toYear)
           }} />
         </div>
 
@@ -39,7 +39,7 @@ export default function Filters ({ genreChange, yearFilter, selectedGenres, from
           <label htmlFor="toYear">To</label>
           <input type="number" id="toYear" placeholder="Year" onChange={(event) => {
             setToYear(+event.target.value)
-            yearFilter(fromYear, toYear)
+            yearFilter(fromYear, +event.target.value)
           }} />
         </div>
       </fieldset>    
