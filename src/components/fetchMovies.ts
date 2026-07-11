@@ -62,10 +62,10 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
     params.append("primary_release_date.lte", `${toYear}-12-31`)
   }
 
-  let url = `https://api.themoviedb.org/3/discover/movie?${params}`
+  const url = `https://api.themoviedb.org/3/discover/movie?${params}`
   
   try {
-    let res = await fetch(`${url}`)
+    const res = await fetch(`${url}`)
 
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`)
@@ -116,10 +116,9 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
   }
 
 
-  let randomPage: number
-    data?.total_pages <= 500 
-      ? randomPage = Math.ceil(Math.random() * data.total_pages)
-      : randomPage = Math.ceil(Math.random() * 500)
+    const randomPage: number = data?.total_pages <= 500 
+      ? Math.ceil(Math.random() * data.total_pages)
+      : Math.ceil(Math.random() * 500)
 
   try {
     const res = await fetch(`${url}&page=${randomPage}`)

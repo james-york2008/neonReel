@@ -3,13 +3,15 @@ import Genre from "./Genre"
 
 type Props = {
   genreChange: (genre: number) => void
-  yearFilter: Function
+  yearFilter: (fromYearNumber: number | undefined, toYearNumber: number | undefined) => Promise<void>
+  fromYear: number | undefined
+  setFromYear: (fromYear: number) => void
+  toYear: number | undefined
+  setToYear: (toYear: number) => void
   selectedGenres: number[]
 }
 
-export default function Filters ({ genreChange, yearFilter, selectedGenres }: Props) { 
-  let fromYearNumber: number
-  let toYearNumber: number
+export default function Filters ({ genreChange, yearFilter, selectedGenres, fromYear, setFromYear, toYear, setToYear }: Props) { 
   return (
     <form id="filters">
       <div id="genreFiltersWrapper">
@@ -28,16 +30,16 @@ export default function Filters ({ genreChange, yearFilter, selectedGenres }: Pr
         <div id="fromYearDiv">
           <label htmlFor="fromYear">From</label>
           <input type="number" id="fromYear" placeholder="Year" onChange={(event) => {
-            fromYearNumber = Number(event.target.value)
-            yearFilter(fromYearNumber, toYearNumber)
+            setFromYear(+event.target.value)
+            yearFilter(+event.target.value, toYear)
           }} />
         </div>
 
         <div id="toYearDiv">
           <label htmlFor="toYear">To</label>
           <input type="number" id="toYear" placeholder="Year" onChange={(event) => {
-            toYearNumber = Number(event.target.value)
-            yearFilter(fromYearNumber, toYearNumber)
+            setToYear(+event.target.value)
+            yearFilter(fromYear, +event.target.value)
           }} />
         </div>
       </fieldset>    
