@@ -106,6 +106,9 @@ The `.env` file is not included in the repository, so you'll need to provide you
 - Removed vague `Function` types in favor of more explicit alternatives
 - Replaced fragile local variables with reliable state from parent components
 
+### Image Optimization:
+- Converted images from `.png` and `.jpg` to `.webp` to reduce file size
+
 ## Potential Future Improvements: 
 - Make search and filter functionalities work together seamlessly. 
 - Create or commission a backend to securely store the API key. 

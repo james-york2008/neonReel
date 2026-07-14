@@ -8,7 +8,7 @@ import Movies from "../../components/movies/Movies"
 import Random from "../../components/random/Random"
 import Footer from "../../components/footer/Footer"
 
-import heroImage from "../../assets/heroImage.png"
+import heroImage from "../../assets/heroImage.webp"
 
 export default function MainPage () {
   const [movies, setMovies] = useState<Movie[]>([])

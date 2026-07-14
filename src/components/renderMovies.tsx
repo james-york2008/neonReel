@@ -1,5 +1,5 @@
 import type { Movie } from "../types/movie"
-import star from "../assets/star.png"
+import star from "../assets/star.webp"
 
 type Props = {
   movies: Movie[]
