@@ -1,8 +1,8 @@
 # Neon Reel 
 [Live Page](https://james-york2008.github.io/neonReel/)
 
-![Image of the Neon Reel landing page on desktop](./src/assets/neonReelDesktopImage.png)
-![Image of the Neon Reel landing page on mobile](./src/assets/neonReelMobileImage.jpg)
+![Image of the Neon Reel landing page on desktop](./src/assets/neonReelDesktopImage.webp)
+![Image of the Neon Reel landing page on mobile](./src/assets/neonReelMobileImage.webp)
 
 ## About: 
 Neon Reel is a movie discovery web application made using the TMDB API. Users can browse movies, filter by genre and release year, and discover random movies that match the selected filters. The application was made to prioritize accessibility, maintainable design, and user experience.
