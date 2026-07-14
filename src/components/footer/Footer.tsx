@@ -1,4 +1,4 @@
-import tmdbLogo from "../../assets/tmdbLogo.jpg"
+import tmdbLogo from "../../assets/tmdbLogo.webp"
 
 export default function Footer () {
   return (

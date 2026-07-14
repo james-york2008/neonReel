@@ -1,5 +1,5 @@
-import logo from "../../assets/logo.png"
-import search from "../../assets/search.png"
+import logo from "../../assets/logo.webp"
+import search from "../../assets/search.webp"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
