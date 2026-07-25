@@ -9,7 +9,7 @@ export default function App() {
       <Routes>
         <Route path="/neonReel" element={<MainPage />} />
 
-        <Route path="/neonReel/:movieId" element={<MoviePage />} />
+        <Route path="/neonReel/movies/:movieId" element={<MoviePage />} />
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>
