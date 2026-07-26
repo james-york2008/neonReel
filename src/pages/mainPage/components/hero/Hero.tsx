@@ -1,4 +1,4 @@
-import search from "../../assets/search.webp"
+import search from "../../../../assets/search.webp"
 import { useState } from "react"
 
 export default function Hero ({ onSearch }: { 

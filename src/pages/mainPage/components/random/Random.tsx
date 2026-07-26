@@ -1,5 +1,5 @@
 import type { MouseEventHandler } from "react"
-import search from "../../assets/search.webp"
+import search from "../../../../assets/search.webp"
 
 type Props = {
   handleRandom: MouseEventHandler

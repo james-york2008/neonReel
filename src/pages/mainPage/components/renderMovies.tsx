@@ -1,5 +1,5 @@
-import type { Movie } from "../types/movie"
-import star from "../assets/star.webp"
+import type { Movie } from "../../../types/movie"
+import star from "../../../assets/star.webp"
 import { Link } from "react-router-dom"
 
 type Props = {

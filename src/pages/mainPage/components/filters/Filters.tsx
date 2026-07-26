@@ -1,4 +1,4 @@
-import { genres } from "../../data/genres"
+import { genres } from "../../../../data/genres"
 import Genre from "./Genre"
 
 type Props = {

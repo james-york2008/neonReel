@@ -1,7 +1,22 @@
-import Movie from "../../components/moviePage/Movie"
+import Navbar from "../../components/navbar/Navbar"
+import Movie from "./components/moviePage/MoviePage"
+import ErrorPage from "../errorPage/ErrorPage"
+
+import { useParams } from "react-router-dom"
 
 export default function MoviePage() {
+  const { movieId } = useParams<{ movieId: string }>()
+
+  if (!movieId) {
+    return (
+      <ErrorPage />
+    )
+  }
+
   return(
-    <Movie />
+    <>
+      <Navbar />
+      <Movie movieId={movieId} />
+    </>
   )
 }

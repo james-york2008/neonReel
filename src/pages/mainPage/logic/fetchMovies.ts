@@ -1,4 +1,4 @@
-import type { Movie } from "../types/movie"
+import type { Movie } from "../../../types/movie"
 
 const baseUrl = "https://api.themoviedb.org/3"
 const apiKey = import.meta.env.VITE_TMDB_API_KEY
@@ -62,7 +62,7 @@ export async function handleFilters(selectedGenres: Array<number> | void, fromYe
     params.append("primary_release_date.lte", `${toYear}-12-31`)
   }
 
-  const url = `https://api.themoviedb.org/3/discover/movie?${params}`
+  const url = `${baseUrl}/discover/movie?${params}`
   
   try {
     const res = await fetch(`${url}`)
@@ -101,7 +101,7 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
     params.append("primary_release_date.lte", `${toYear}-12-31`)
   }
 
-  const url = `https://api.themoviedb.org/3/discover/movie?${params}`
+  const url = `${baseUrl}/discover/movie?${params}`
 
   try {
     const  res = await fetch(`${url}`)
@@ -116,9 +116,9 @@ export async function handleRandom(selectedGenres: Array<number> | void, fromYea
   }
 
 
-    const randomPage: number = data?.total_pages <= 500 
-      ? Math.ceil(Math.random() * data.total_pages)
-      : Math.ceil(Math.random() * 500)
+  const randomPage: number = data?.total_pages <= 500 
+    ? Math.ceil(Math.random() * data.total_pages)
+    : Math.ceil(Math.random() * 500)
 
   try {
     const res = await fetch(`${url}&page=${randomPage}`)
