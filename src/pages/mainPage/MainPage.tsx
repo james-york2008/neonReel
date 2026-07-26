@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import type { Movie } from "../../types/movie";
 import { fetchRecommendedMovies, searchMovies, handleFilters, handleRandom } from "../../components/fetchMovies";
 
+import Navbar from "../../components/navbar/Navbar";
 import Hero from "../../components/hero/Hero";
 import Filters from "../../components/filters/Filters"
 import Movies from "../../components/movies/Movies"
@@ -74,6 +75,7 @@ export default function MainPage () {
 
   return(
     <>
+      <Navbar />
       <main>
         <div id="backgroundImageWrapper" style={{
         backgroundImage: `url(${heroImage})`}}>

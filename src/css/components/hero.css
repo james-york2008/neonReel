@@ -1,7 +1,3 @@
-#logo, #logoWrapper {
-    height: 7rem;
-}
-
 #heroTitle {
     background: linear-gradient(
         90deg, 
@@ -87,10 +83,6 @@
     #heroSubtitle {
         max-width: 17rem;
         line-height: 1.5rem;
-    }
-
-    #logo {
-        height: 9rem;
     }
 }
 
