@@ -41,7 +41,7 @@
 }
 
 #searchBar {
-    width: 14rem;
+    width: 10rem;
     box-shadow: none;
     border: none;
 }
@@ -65,6 +65,12 @@
     border-radius: 10px;
     cursor: pointer;
     margin: auto 0;
+}
+
+@media (min-width: 400px) {
+    #searchbar {
+        width: 14rem;
+    }
 }
 
 @media (min-width: 700px) {
