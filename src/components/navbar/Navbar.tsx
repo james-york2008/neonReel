@@ -3,6 +3,8 @@ import logo from "../../assets/logo.webp"
 
 export default function Navbar () {
   return (
-    <Link to={'/neonReel'} id="logoWrapper"><img id="logo" src={logo} alt="Link to home page" /></Link>
+    <header>
+      <Link to={'/neonReel'} id="logoWrapper"><img id="logo" src={logo} alt="Link to home page" /></Link>
+    </header>
   )
 }

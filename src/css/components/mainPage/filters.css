@@ -64,6 +64,13 @@ label input {
 
 #fromYear, #toYear {
     background-color: rgb(190, 190, 190);
+    width: 9rem;
+}
+
+@media (min-width: 400px) {
+    #fromYear, #toYear {
+        width: 10rem;
+    }
 }
 
 @media (min-width: 700px) {
@@ -84,9 +91,12 @@ label input {
         background-color: rgb(0, 2, 30);
     }
 
-    
     #genreFilters .sectionTitle {
         padding: 1.5rem 0.5rem;
+    }
+
+    #fromYear, #toYear {
+        width: 17rem;
     }
 }
 

@@ -52,8 +52,4 @@ body {
     .sectionTitle {
         font-size: 1.5rem
     }
-
-    #backgroundImageWrapper {
-        background-size: cover;
-    }
 }

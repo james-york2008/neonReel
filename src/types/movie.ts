@@ -4,4 +4,10 @@ export type Movie = {
   backdrop_path: string
   release_date: string
   vote_average: number
+  runtime: number
+  status: string
+  overview: string
+  budget: number
+  revenue: number
+  poster_path: string
 }

@@ -1,5 +1,5 @@
 import Navbar from "../../components/navbar/Navbar"
-import Movie from "./components/moviePage/MoviePage"
+import Movie from "./components/movie/Movie"
 import ErrorPage from "../errorPage/ErrorPage"
 
 import { useParams } from "react-router-dom"

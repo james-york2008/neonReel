@@ -3,12 +3,13 @@ import { createRoot } from "react-dom/client"
 import App from "./App.tsx"
 
 import "./css/base.css"
-import "./css/components/navbar.css"
-import "./css/components/hero.css"
-import "./css/components/filters.css"
-import "./css/components/footer.css"
-import "./css/components/movies.css"
-import "./css/components/random.css"
+import "./css/navbar.css"
+import "./css/footer.css"
+
+import "./css/components/mainPage/hero.css"
+import "./css/components/mainPage/filters.css"
+import "./css/components/mainPage/movies.css"
+import "./css/components/mainPage/random.css"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

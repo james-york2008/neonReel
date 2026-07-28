@@ -75,17 +75,18 @@ export default function MainPage () {
 
   return(
     <>
-      <Navbar />
-      <main>
-        <div id="backgroundImageWrapper" style={{
-        backgroundImage: `url(${heroImage})`}}>
+      <div id="backgroundImageWrapper" style={{
+      backgroundImage: `url(${heroImage})`}}>
+        <Navbar />
+        <main>
           <Hero onSearch={handleSearch} />
           <Filters genreChange={genreChange} yearFilter={yearFilter} fromYear={fromYear} setFromYear={setFromYear} toYear={toYear} setToYear={setToYear} selectedGenres={selectedGenres} />
-        </div>
       
-        <Movies movies={movies} />
-        <Random handleRandom={randomMovie} />
-      </main>
+          <Movies movies={movies} />
+          <Random handleRandom={randomMovie} />
+        </main>
+      </div>
+      
       <Footer />
     </>
   )
