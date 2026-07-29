@@ -1,4 +1,5 @@
 import type { Genre } from "../../../../types/genre"
+import styles from "../../../../css/components/mainPage/filters.module.css"
 
 type Props = {
   genre: Genre
@@ -8,7 +9,7 @@ type Props = {
 
 export default function Genres({ genre, genreChange, selectedGenres }: Props) {
   return(
-    <label htmlFor={genre.genreLabel} className="genreContainer">
+    <label htmlFor={genre.genreLabel} className={styles.genreContainer}>
       <input 
         type="checkbox" 
         id={genre.genreLabel} 
@@ -25,7 +26,7 @@ export default function Genres({ genre, genreChange, selectedGenres }: Props) {
         } 
       />
 
-      <p className="genre">{genre.genreName}</p>
+      <p className={styles.genre}>{genre.genreName}</p>
     </label>
   )
 }

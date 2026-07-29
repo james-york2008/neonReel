@@ -110,6 +110,9 @@ The `.env` file is not included in the repository, so you'll need to provide you
 - Converted images from `.png` and `.jpg` to `.webp` to reduce file size
 - Re-encoded mislabeled `.webp` headers with `sharp` to ensure file size reduction
 
+### CSS Module Migration:
+- Switched CSS files to CSS modules to simplify future expansion
+
 
 ## Potential Future Improvements: 
 - Make search and filter functionalities work together seamlessly. 

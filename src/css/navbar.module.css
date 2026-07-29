@@ -1,9 +1,9 @@
-#logo, #logoWrapper {
+.logo, .logoWrapper {
   height: 7rem;
 }
 
 @media (min-width: 700px) {
-  #logo {
+  .logo {
     height: 9rem;
   }
 }
