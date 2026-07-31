@@ -68,7 +68,7 @@
 }
 
 @media (min-width: 400px) {
-    .searchbar {
+    .searchBar {
         width: 14rem;
     }
 }

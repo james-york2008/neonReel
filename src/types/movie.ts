@@ -7,7 +7,5 @@ export type Movie = {
   runtime: number
   status: string
   overview: string
-  budget: number
-  revenue: number
   poster_path: string
 }
