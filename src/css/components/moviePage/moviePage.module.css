@@ -1,0 +1,48 @@
+.moviePageMainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.movieImage {
+  width: 10rem;
+  border-radius: 20px;
+  border: 1px solid rgb(55, 55, 100);
+  margin: 0.5rem 0;
+}
+
+.moviePageRow {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.movieStatusNotReleased {
+  color: rgb(255, 30, 30);
+  font-weight: 700;
+}
+
+.starRatingContainer {
+  display: flex;
+}
+
+.movieTitle {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.greyText {
+  color: rgb(130, 130, 130);
+}
+
+.movieOverview {
+  margin: 1rem;
+  line-height: 1.5;
+}
+
+
+.starIcon {
+  width: 1rem;
+}

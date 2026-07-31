@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import { fetchMovie } from "../../logic/fetchMovie"
 
 import type { Movie } from "../../../../types/movie"
 
-import star from '../../../../assets/star.webp'
+import star from "../../../../assets/star.webp"
+import styles from "../../../../css/components/moviePage/moviePage.module.css"
 
 type Props = {
   movieId: string
@@ -11,38 +13,61 @@ type Props = {
 
 export default function Movie ({ movieId }: Props) {
   const [movie, setMovie] = useState<Movie | null>(null)
-  
+  const [loading, setLoading] = useState<boolean>(true)
+
   useEffect(() => {
     const loadMovie = async () => {
       const movie = await fetchMovie(movieId)
+
       setMovie(movie)  
-      console.log(movie)
+      setLoading(false)
     }
 
     if (movieId) {
       loadMovie()
     }
   }, [])
+  
+  if (loading) {
+    return (
+      <p>Loading</p>
+    )
+  }
+  
+  if (!movie && !loading) {
+    return (
+      <>
+        <h1>Movie not found!</h1>
+        <Link to={'/neonReel'}>Return to home page</Link>
+      </>
+    )
+  }
 
-  return (
-    <>
-      <div className="moviePageMainContent">
-        <img src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} alt={`${movie?.title} backdrop image`} />
-        <h1>{movie?.title}</h1>
-      
-        <div className="moviePageRow">
-          <p className="moviePageYear">{movie?.release_date?.split("-")[0]}</p>
-          <p className="movieLength">{movie?.runtime}</p>
-          <p className="movieStatus">{movie?.status}</p>
+  if (movie) {
+    return (
+      <>
+        <div className={styles.moviePageMainContent}>
+          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={`${movie.title} backdrop image`} className={styles.movieImage} />
+          <div>
+            <h1 className={styles.movieTitle}>{movie.title}</h1>
+          
+            <div className={`${styles.moviePageRow} ${styles.greyText}`}>
+              <p>{movie.release_date?.split("-")[0]}</p>
+              <p>{movie.runtime} min</p>
+              <p className={movie.status !== "Released" ? styles.movieStatusNotReleased : ""}>{movie.status}</p>
+            </div>
+  
+            <div className={`${styles.moviePageRow} ${styles.greyText}`}>
+              <div className={styles.starRatingContainer}>
+                <p className={styles.starRating}>{movie.vote_average.toFixed(1)} / 10</p>
+                <img src={star} alt="" aria-hidden="true" className={styles.starIcon} />
+              </div>
+            </div>
+  
+            <p className={styles.movieOverview}>{movie.overview}</p>
+          </div>
         </div>
-
-        <div className="moviePageRow">
-          <p className="starRating">{movie?.vote_average} / 10</p>
-          <img src={star} alt="" aria-hidden="true" />
-        </div>
-
-        <p className="movieOverview">{movie?.overview}</p>
-      </div>
-    </>
-  )
+      </>
+    ) 
+  }
 }

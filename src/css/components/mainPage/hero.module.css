@@ -48,6 +48,7 @@
 
 .searchBar, .searchBar::placeholder {
     color: rgb(158, 158, 158);
+    font-size: 0.6rem;
 }
 
 .search img {
@@ -70,6 +71,10 @@
 @media (min-width: 400px) {
     .searchBar {
         width: 14rem;
+    }
+
+    .searchBar, .searchBar::placeholder {
+        font-size: 0.8rem;
     }
 }
 
@@ -97,8 +102,8 @@
         height: 3rem;
     }
 
-    .searchBar, .submitSearch {
-        font-size: 1rem;
+    .searchBar, .submitSearch, .searchBar::placeholder {
+        font-size: 1.3rem;
     }
 
     .searchBar {
@@ -124,9 +129,5 @@
 
     .search img {
         height: 4rem;
-    }
-
-    .searchBar, .submitSearch {
-        font-size: 1.3rem;
     }
 }

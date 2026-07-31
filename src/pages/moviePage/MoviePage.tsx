@@ -1,4 +1,5 @@
 import Navbar from "../../components/navbar/Navbar"
+import Footer from "../../components/footer/Footer"
 import Movie from "./components/movie/Movie"
 import ErrorPage from "../errorPage/ErrorPage"
 
@@ -16,7 +17,12 @@ export default function MoviePage() {
   return(
     <>
       <Navbar />
-      <Movie movieId={movieId} />
+
+      <main>
+        <Movie movieId={movieId} />
+      </main>
+      
+      <Footer />
     </>
   )
 }
