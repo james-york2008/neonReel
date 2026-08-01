@@ -28,7 +28,7 @@ export default function RenderMovies({ movies }: Props) {
                   <img src={star} alt="" aria-hidden="true" className={styles.star} />
       
                   <p className={styles.voteAverage}>
-                    <span className={styles.voteAverageText}>Star rating:</span>
+                    <span className="screenReaderText">Star rating:</span>
                     {movie.vote_average.toFixed(1)}
                   </p>
                 </div>

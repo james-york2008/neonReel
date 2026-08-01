@@ -26,7 +26,7 @@ export default function Movie ({ movieId }: Props) {
     if (movieId) {
       loadMovie()
     }
-  }, [])
+  }, [movieId])
   
   if (loading) {
     return (
@@ -43,6 +43,8 @@ export default function Movie ({ movieId }: Props) {
     )
   }
 
+  console.log(movie)
+
   if (movie) {
     return (
       <>
@@ -52,13 +54,19 @@ export default function Movie ({ movieId }: Props) {
             <h1 className={styles.movieTitle}>{movie.title}</h1>
           
             <div className={`${styles.moviePageRow} ${styles.greyText}`}>
-              <p>{movie.release_date?.split("-")[0]}</p>
+              <span className="screenReaderText">Released in</span>
+              <p>{movie.release_date.split("-")[0]}</p>
+              
+              <span className="screenReaderText">Runtime</span>
               <p>{movie.runtime} min</p>
+
+              <span className="screenReaderText">Status:</span>
               <p className={movie.status !== "Released" ? styles.movieStatusNotReleased : ""}>{movie.status}</p>
             </div>
   
             <div className={`${styles.moviePageRow} ${styles.greyText}`}>
               <div className={styles.starRatingContainer}>
+                <span className="screenReaderText">Star rating</span>
                 <p className={styles.starRating}>{movie.vote_average.toFixed(1)} / 10</p>
                 <img src={star} alt="" aria-hidden="true" className={styles.starIcon} />
               </div>
