@@ -1,7 +1,7 @@
-import logo from "../../assets/logo.webp"
-import search from "../../assets/search.webp"
+import search from "../../../../assets/search.webp"
+import styles from "../../../../css/components/mainPage/hero.module.css"
+
 import { useState } from "react"
-import { Link } from "react-router-dom"
 
 export default function Hero ({ onSearch }: { 
   onSearch: (query: string) => void
@@ -15,19 +15,17 @@ export default function Hero ({ onSearch }: {
   
   return (
     <div id="hero">
-      <Link to={'/neonReel'} id="logoWrapper"><img id="logo" src={logo} alt="Link to home page" /></Link>
-
-      <h1 id="heroTitle"><span className="whiteText">FIND YOUR</span><br/>NEXT MOVIE</h1>
-      <p id="heroSubtitle">Search by title, year, or explore suggestions to discover your next favorite movie.</p>
+      <h1 className={styles.heroTitle}><span className={styles.whiteText}>FIND YOUR</span><br/>NEXT MOVIE</h1>
+      <p className={styles.heroSubtitle}>Search by title, year, or explore suggestions to discover your next favorite movie.</p>
 
 
-      <form id="search" onSubmit={handleSearch}>
-          <div id="searchWrapper">
-              <img src={search} alt="" aria-hidden="true" loading="lazy" id="submitSearchViaImg" />
+      <form className={styles.search} onSubmit={handleSearch}>
+          <div className={styles.searchWrapper}>
+              <img src={search} alt="" aria-hidden="true" loading="lazy" />
               <input 
                 type="search" 
                 placeholder="Search movies by title or keyword" 
-                id="searchBar" 
+                className={styles.searchBar} 
                 value={searchTerm} 
                 autoComplete="off" 
                 aria-labelledby="submitSearch" 
@@ -36,7 +34,7 @@ export default function Hero ({ onSearch }: {
                 })} 
               />
           </div>
-          <button id="submitSearch" role="submit">Search</button>
+          <button className={styles.submitSearch} role="submit">Search</button>
       </form>
     </div>
   )

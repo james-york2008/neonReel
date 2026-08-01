@@ -5,7 +5,7 @@
 ![Image of the Neon Reel landing page on mobile](./src/assets/neonReelMobileImage.webp)
 
 ## About: 
-Neon Reel is a movie discovery web application made using the TMDB API. Users can browse movies, filter by genre and release year, and discover random movies that match the selected filters. The application was made to prioritize accessibility, maintainable design, and user experience.
+Neon Reel is a movie discovery web application made using the TMDB API. Users can browse movies, filter by genre and release year, discover random movies, and view expanded information for individual films. The application was made to prioritize accessibility, maintainable design, and user experience.
 
 **Note:** This product uses the TMDB API but is not endorsed or certified by TMDB.
 
@@ -17,6 +17,7 @@ One important note regarding this project is it does not use a backend, and in t
 - **Dynamic Rendering:** Dynamically rendered movie cards
 - **Movie Filters:** Dynamic movie filters for year and genres
 - **Movie Randomization:** Randomized movie selection that complies with the filters
+- **Expanded Movie Pages:** Displays expanded movie information
 - **Modern Routing:** Built with React Router for navigation and error recovery
 - **Responsive Design:** Designed to function well on desktop and mobile
 
@@ -66,6 +67,12 @@ The `.env` file is not included in the repository, so you'll need to provide you
 **State Management:** One of the biggest challenges faced during the React migration was managing state across multiple components. In older versions, I declared the movie state in multiple components, which caused inconsistent behaviors and unnecessarily complex logic. Refactoring the application to centralize state ownership greatly improved reliability.
 
 
+**Routing Architecture:** Expanding the application beyond a single page required designing routing logic that cleanly separated the main page from individual movie pages. This also involved implementing dedicated error states for invalid movie IDs, allowing users to easily return to the home page.
+
+
+**Project Structure:** As the application grew, the original file structure became less maintainable. Components and logic that belong exclusively to the landing page were moved into page specific folders, with dedicated subfolders for components and logic. The same structure was used for the expanded movie pages, making future expansion simpler.
+
+
 **Random Movie Selection:** Implementing the random movie feature presented additional challenges when filters were introduced. Ensuring the random selector respected active genre and year filters required rewriting several fetch requests and carefully managing query parameters.
 
 
@@ -110,8 +117,11 @@ The `.env` file is not included in the repository, so you'll need to provide you
 - Converted images from `.png` and `.jpg` to `.webp` to reduce file size
 - Re-encoded mislabeled `.webp` headers with `sharp` to ensure file size reduction
 
+### CSS Module Migration:
+- Switched CSS files to CSS modules to simplify future expansion and to isolate styles
+
 
 ## Potential Future Improvements: 
 - Make search and filter functionalities work together seamlessly. 
 - Create or commission a backend to securely store the API key. 
-- Explore TMDB's watch-provider integrations to display where movies can be streamed or purchased.
+- Expand the expanded movie pages width additional data, such as collection navigation, production companies, and other related data.

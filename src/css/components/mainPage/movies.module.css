@@ -1,4 +1,4 @@
-#movies {
+.movies {
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +11,14 @@
     border-radius: 20px;
     border: 1px solid rgb(55, 55, 100);
     width: 10rem;
+}
+
+.movie:hover {
+    transform: scale(0.98);
+}
+
+.movieLink {
+    text-decoration: none;
 }
 
 .moviePicture {
@@ -46,17 +54,6 @@
     display: inline-block;
 }
 
-.voteAverageText {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-}
-
 .errorText {
     color: white;
     font-size: 1.5rem;
@@ -67,6 +64,10 @@
     .movie {
         height: 16.5rem;
         width: 11rem;
+    }
+    
+    .movie:hover {
+        transform: translateY(-5px);
     }
 
     .moviePicture {

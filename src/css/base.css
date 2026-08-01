@@ -10,10 +10,10 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.1;
     background-color: rgb(0, 2, 30);
+    color: rgb(205, 205, 205);
 }
 
 .sectionTitle {  
-    color: rgb(205, 205, 205);
     padding: 1rem;
     font-size: 1.1rem;
 }
@@ -27,7 +27,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.errorPageReturnToHomeLink:visited, .errorPageReturnToHomeLink, .pageErrorText {
+.errorPageReturnToHomeLink, .errorPageReturnToHomeLink:visited, .pageErrorText {
     color: rgb(205, 205, 205);
 }
 
@@ -35,6 +35,17 @@ body {
     text-align: center;
     margin: 3rem 0;
     font-size: 2rem;
+}
+
+.screenReaderText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
 }
 
 @media (min-width: 700px) {
@@ -51,9 +62,5 @@ body {
 @media (min-width: 992px) {
     .sectionTitle {
         font-size: 1.5rem
-    }
-
-    #backgroundImageWrapper {
-        background-size: cover;
     }
 }

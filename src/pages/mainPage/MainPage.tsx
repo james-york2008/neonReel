@@ -1,11 +1,12 @@
 import { useEffect, useState, useCallback } from "react";
 import type { Movie } from "../../types/movie";
-import { fetchRecommendedMovies, searchMovies, handleFilters, handleRandom } from "../../components/fetchMovies";
+import { fetchRecommendedMovies, searchMovies, handleFilters, handleRandom } from "./logic/fetchMovies";
 
-import Hero from "../../components/hero/Hero";
-import Filters from "../../components/filters/Filters"
-import Movies from "../../components/movies/Movies"
-import Random from "../../components/random/Random"
+import Navbar from "../../components/navbar/Navbar";
+import Hero from "./components/hero/Hero";
+import Filters from "./components/filters/Filters"
+import Movies from "./components/movies/Movies"
+import Random from "./components/random/Random"
 import Footer from "../../components/footer/Footer"
 
 import heroImage from "../../assets/heroImage.webp"
@@ -74,16 +75,18 @@ export default function MainPage () {
 
   return(
     <>
-      <main>
-        <div id="backgroundImageWrapper" style={{
-        backgroundImage: `url(${heroImage})`}}>
+      <div id="backgroundImageWrapper" style={{
+      backgroundImage: `url(${heroImage})`}}>
+        <Navbar />
+        <main>
           <Hero onSearch={handleSearch} />
           <Filters genreChange={genreChange} yearFilter={yearFilter} fromYear={fromYear} setFromYear={setFromYear} toYear={toYear} setToYear={setToYear} selectedGenres={selectedGenres} />
-        </div>
       
-        <Movies movies={movies} />
-        <Random handleRandom={randomMovie} />
-      </main>
+          <Movies movies={movies} />
+          <Random handleRandom={randomMovie} />
+        </main>
+      </div>
+      
       <Footer />
     </>
   )
