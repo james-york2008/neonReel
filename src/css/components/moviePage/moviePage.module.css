@@ -6,10 +6,11 @@
 }
 
 .movieImage {
-  width: 10rem;
   border-radius: 20px;
   border: 1px solid rgb(55, 55, 100);
   margin: 0.5rem 0;
+  width: 33%;
+  object-fit: contain;
 }
 
 .moviePageRow {
@@ -42,7 +43,36 @@
   line-height: 1.5;
 }
 
-
 .starIcon {
   width: 1rem;
+}
+
+@media (min-width: 700px) {
+  .moviePageMainContent {
+    font-size: 1.3rem;
+    flex-direction: row;
+    align-items: start;
+    text-align: start;
+  }
+    
+  .movieTitle {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .movieOverview {
+    margin: 1rem 3rem 3rem 3rem;
+  }
+
+  .movieImage {
+    margin-left: 3rem;
+    width: 25%;
+  }
+  
+}
+
+@media (min-width: 992px) {
+  .movieImage {
+    width: 20%;
+  }
 }
