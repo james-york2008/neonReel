@@ -37,7 +37,7 @@ export default function RenderMovies({ movies }: Props) {
           )
         } else {
           return(
-            <p className={styles.errorText} key="undefined">No movies found</p>
+            <p className={styles.errorText} key={undefined}>No movies found</p>
           )
         }
       })}
