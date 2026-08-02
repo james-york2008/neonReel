@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import { fetchMovie } from "../../logic/fetchMovie"
 
 import type { Movie } from "../../../../types/movie"
 
 import star from "../../../../assets/star.webp"
 import styles from "../../../../css/components/moviePage/moviePage.module.css"
+import ErrorPage from "../../../errorPage/ErrorPage"
 
 type Props = {
   movieId: string
@@ -37,8 +37,7 @@ export default function Movie ({ movieId }: Props) {
   if (!movie && !loading) {
     return (
       <>
-        <h1>Movie not found!</h1>
-        <Link to={'/neonReel'}>Return to home page</Link>
+        <ErrorPage />
       </>
     )
   }
