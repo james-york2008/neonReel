@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom"
 
-export default function ErrorPage() {
-  return(
-    <div className="pageErrorText">
-      <p>Page not found</p>
-      <Link to={'/neonReel'} className="errorPageReturnToHomeLink">Return to home page</Link>
-    </div>
+import Navbar from "../../components/navbar/Navbar"
+import Footer from "../../components/footer/Footer"
+
+import type { ReactNode } from "react"
+
+
+type ErrorProps = {
+  children: ReactNode
+}
+
+export default function ErrorPage({ children }: ErrorProps) {
+  return (
+    <>
+    <Navbar />
+    
+      <div className="pageErrorText">
+        <p>{children}</p>
+        <Link to={'/neonReel'} className="errorPageReturnToHomeLink">Return to home page</Link>
+      </div>
+
+      <Footer />
+    </>
   )
 }

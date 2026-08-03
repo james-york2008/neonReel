@@ -1,48 +1,13 @@
-import { useEffect, useState } from "react"
-import { fetchMovie } from "../../logic/fetchMovie"
-
 import type { Movie } from "../../../../types/movie"
 
 import star from "../../../../assets/star.webp"
 import styles from "../../../../css/components/moviePage/moviePage.module.css"
-import ErrorPage from "../../../errorPage/ErrorPage"
 
 type Props = {
-  movieId: string
+  movie: Movie | null
 }
 
-export default function Movie ({ movieId }: Props) {
-  const [movie, setMovie] = useState<Movie | null>(null)
-  const [loading, setLoading] = useState<boolean>(true)
-
-  useEffect(() => {
-    const loadMovie = async () => {
-      const movie = await fetchMovie(movieId)
-
-      setMovie(movie)  
-      setLoading(false)
-    }
-
-    if (movieId) {
-      loadMovie()
-    }
-  }, [movieId])
-  
-  if (loading) {
-    return (
-      <p>Loading</p>
-    )
-  }
-  
-  if (!movie && !loading) {
-    return (
-      <>
-        <ErrorPage />
-      </>
-    )
-  }
-
-  console.log(movie)
+export default function MovieElement ({ movie }: Props) {
 
   if (movie) {
     return (
