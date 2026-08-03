@@ -1,28 +1,59 @@
 import Navbar from "../../components/navbar/Navbar"
 import Footer from "../../components/footer/Footer"
-import Movie from "./components/movie/Movie"
+import MovieElement from "./components/movie/Movie"
 import ErrorPage from "../errorPage/ErrorPage"
 
 import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { fetchMovie } from "./logic/fetchMovie"
+
+import type { Movie } from "../../types/movie"
 
 export default function MoviePage() {
   const { movieId } = useParams<{ movieId: string }>()
+  const [movie, setMovie] = useState<Movie | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
 
-  if (!movieId) {
+  useEffect(() => {
+    const loadMovie = async () => {
+      if (movieId) {
+        const movie = await fetchMovie(movieId)
+
+        setMovie(movie)  
+        setLoading(false)  
+      }
+    }
+
+    if (movieId) {
+      loadMovie()
+    }
+  }, [movieId])
+  
+  if (loading) {
     return (
-      <ErrorPage />
+      <p>Loading</p>
+    )
+  }
+  
+  if (!movie && !loading) {
+    return (
+      <>
+        <ErrorPage>Movie not found</ErrorPage>
+      </>
     )
   }
 
-  return(
-    <>
-      <Navbar />
+  if (movieId) {
+    return (
+      <>
+        <Navbar />
 
-      <main>
-        <Movie movieId={movieId} />
-      </main>
-      
-      <Footer />
-    </>
-  )
+        <main>
+          <MovieElement movie={movie} />
+        </main>
+        
+        <Footer />
+      </>
+    )
+  }
 }

@@ -7,11 +7,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/neonReel" element={<MainPage />} />
+        <Route path="/neonReel/" element={<MainPage />} />
 
         <Route path="/neonReel/movies/:movieId" element={<MoviePage />} />
 
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage>Page not found</ErrorPage>} />
       </Routes>
       
     </BrowserRouter>

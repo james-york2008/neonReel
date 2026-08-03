@@ -105,6 +105,7 @@ The `.env` file is not included in the repository, so you'll need to provide you
 - Standardized inconsistent quotation mark usage throughout the program for better readability
 - Made the landing page its own component instead of assembling it in App to make the application more scalable
 - Implemented URL error handling with React Router to navigate users to the landing page
+- Centralized state variables and error handling in the MoviePage construction component
 
 
 ## Code Quality and Type Safety
@@ -119,6 +120,10 @@ The `.env` file is not included in the repository, so you'll need to provide you
 
 ### CSS Module Migration:
 - Switched CSS files to CSS modules to simplify future expansion and to isolate styles
+
+### Error Handling:
+- Implemented robust error handling to convey the error to the user effectively
+- Designed error recovery links to direct users back to the landing page upon page errors
 
 
 ## Potential Future Improvements: 
