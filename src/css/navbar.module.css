@@ -2,6 +2,18 @@
   height: 7rem;
 }
 
+.skipToMainLink {
+    opacity: 0;
+    height: 0;
+    position: absolute;
+}
+
+.skipToMainLink:focus, .skipToMainLink:hover {
+  opacity: 1;
+  color: rgb(205, 205, 205);
+}
+
+
 @media (min-width: 700px) {
   .logo {
     height: 9rem;

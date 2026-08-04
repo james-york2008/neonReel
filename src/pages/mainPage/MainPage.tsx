@@ -77,8 +77,9 @@ export default function MainPage () {
     <>
       <div id="backgroundImageWrapper" style={{
       backgroundImage: `url(${heroImage})`}}>
-        <Navbar />
-        <main>
+        <Navbar mainLink="mainPage" />
+        
+        <main id="mainPage">
           <Hero onSearch={handleSearch} />
           <Filters genreChange={genreChange} yearFilter={yearFilter} fromYear={fromYear} setFromYear={setFromYear} toYear={toYear} setToYear={setToYear} selectedGenres={selectedGenres} />
       

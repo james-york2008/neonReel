@@ -13,12 +13,12 @@ type ErrorProps = {
 export default function ErrorPage({ children }: ErrorProps) {
   return (
     <>
-    <Navbar />
-    
-      <div className="pageErrorText">
+    <Navbar mainLink="errorPage" />
+
+      <main className="pageErrorText" id="errorPage">
         <p>{children}</p>
         <Link to={'/neonReel'} className="errorPageReturnToHomeLink">Return to home page</Link>
-      </div>
+      </main>
 
       <Footer />
     </>
