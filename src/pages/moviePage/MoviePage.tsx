@@ -46,9 +46,9 @@ export default function MoviePage() {
   if (movieId) {
     return (
       <>
-        <Navbar />
+        <Navbar mainLink="moviePage" />
 
-        <main>
+        <main id="moviePage">
           <MovieElement movie={movie} />
         </main>
         

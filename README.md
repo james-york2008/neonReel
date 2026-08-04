@@ -96,6 +96,7 @@ The `.env` file is not included in the repository, so you'll need to provide you
 ### Screen Reader Improvements
 - Hid movie poster images from screen readers because they provide no substantial value that isn't provided by the title
 - Removed unnecessary browser autocomplete from the search field to create a smoother experience
+- Implemented a skip to main content button to prevent unnecessary repetition
 
 ### Keyboard Navigation
 - Added visible focus indicators to genre filters
