@@ -8,4 +8,6 @@ export type Movie = {
   status: string
   overview: string
   poster_path: string
+  vote_count: number
+  tagline: string
 }
