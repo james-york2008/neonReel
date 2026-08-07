@@ -31,7 +31,13 @@ export default function MoviePage() {
   
   if (loading) {
     return (
-      <p>Loading</p>
+      <>
+        <Navbar mainLink="loadingPage" />
+
+        <p id="loadingPage">Loading</p>
+
+        <Footer />
+      </>
     )
   }
   

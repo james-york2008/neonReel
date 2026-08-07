@@ -17,7 +17,7 @@ export default function RenderMovies({ movies }: Props) {
         if (movie) {
           const url= `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}?api_key=${apiKey}`
 
-          return(
+          return (
             <Link to={`/neonReel/movies/${movie.id}`} key={movie.id} className={styles.movieLink}>
               <article className={styles.movie}>
                 <img className={styles.moviePicture} src={url} aria-hidden="true" lazy-loading="true" decoding="async" />
