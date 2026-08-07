@@ -1,8 +1,11 @@
 .moviePageMainContent {
+  text-align: center;
+}
+
+.mainMovieWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
 .movieImage {
@@ -47,21 +50,29 @@
   width: 1rem;
 }
 
+.tagline {
+  font-size: 1.3rem;
+  color: rgb(142, 122, 237);
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
 @media (min-width: 700px) {
   .moviePageMainContent {
     font-size: 1.3rem;
-    flex-direction: row;
-    align-items: start;
-    text-align: start;
   }
-    
+
+  .mainMovieWrapper {
+    flex-direction: row;
+  }
+
   .movieTitle {
     font-size: 1.7rem;
-    text-align: center;
   }
 
   .movieOverview {
     margin: 1rem 3rem 3rem 3rem;
+    text-align: start;
   }
 
   .movieImage {
@@ -69,10 +80,18 @@
     width: 25%;
   }
   
+  .tagline {
+    font-size: 1.7rem;
+    text-align: center;
+  }
 }
 
 @media (min-width: 992px) {
   .movieImage {
     width: 20%;
+  }
+
+  .tagline {
+    font-size: 2.3rem;
   }
 }
