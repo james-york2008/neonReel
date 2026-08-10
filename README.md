@@ -24,7 +24,7 @@ One important note regarding this project is it does not use a backend, and in t
 ## Tech Stack: 
 - **Framework:** ReactJS 
 - **Language:** TypeScript 
-- **Styling:** CSS 
+- **Styling:** CSS Modules
 - **Third-Party APIs:** TMDB API
 - **Build Tool:** Vite
 
