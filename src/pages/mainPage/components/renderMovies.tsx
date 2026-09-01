@@ -15,7 +15,9 @@ export default function RenderMovies({ movies }: Props) {
     <div className={styles.movies}>
       {movies.map(movie => {
         if (movie) {
-          const url= `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}?api_key=${apiKey}`
+          const movieImage = movie.backdrop_path || movie.poster_path
+
+          const url= `https://image.tmdb.org/t/p/w500${movieImage}?api_key=${apiKey}`
 
           return (
             <Link to={`/neonReel/movies/${movie.id}`} key={movie.id} className={styles.movieLink}>
